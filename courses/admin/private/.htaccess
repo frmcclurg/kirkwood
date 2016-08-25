@@ -1,0 +1,7 @@
+### www.askapache.com/online-tools/htpasswd-generator/
+
+AuthType Basic
+AuthName "File Access Protected"
+# AuthUserFile C:/xampp/.htpasswd
+AuthUserFile /home/fmcclurg/.htpasswd
+Require valid-user
