@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title><?= $title ?></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Linux Boot Camp">
+<meta name="author" content="Fred R. McClurg">
+
+<!-- Le styles -->
+<link href="../../common/bootstrap/assets/css/bootstrap.css"
+   rel="stylesheet">
+   
+<link href="../../common/bootstrap/assets/css/bootstrap-responsive.css"
+   rel="stylesheet">
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Le fav and touch icons -->
+<link rel="shortcut icon" href="../../common/bootstrap/assets/ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+   href="../../common/bootstrap/assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114"
+   href="../../common/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"
+   href="../../common/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed"
+   href="../../common/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
+   
+<link type="text/css" 
+   href="../../common/jquery/css/smoothness/jquery-ui-1.8.22.custom.css" rel="stylesheet" />	
+   
+<style type="text/css">
+   body 
+   {
+      padding-top: 60px;
+      padding-bottom: 40px;
+   }
+   
+   .sidebar-nav 
+   {
+      padding: 9px 0;
+   }
+   
+   .nav-header
+   {
+      background-color: #00108a;
+      /* background-color: #28369f; */
+      color: #ffffff;
+   }
+</style>
+
+<script type="text/javascript" 
+   src="../../common/jquery/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" 
+   src="../../common/jquery/js/jquery-ui-1.8.22.custom.min.js"></script>
+   
+<script>
+   // $(document).ready(function() {
+      // $("#dialog-modal").dialog();
+   // });
+</script>
+   
+<script type="text/javascript">
+   $(function() {
+      $("#dialog-modal").dialog();
+      
+   	$(".nav-list > li a").click(function() {
+      	$(".nav-list > li.active").removeClass("active");
+      	$(this).parent().addClass("active");
+      });
+
+		$( "#dialog-modal" ).dialog({
+			height: 140,
+			modal: true
+		});
+      
+   	// $("a").attr("href", "#about").click(function() {
+   	   // $("#aboutDialog").dialog();
+      // });
+
+   	var aboutDialog = $('<div></div>')
+		   .html('About Dialog!')
+		   .dialog({
+   			autoOpen: false,
+   			title: 'About Dialog'
+		   });
+
+   	// $("a").attr("href", "#about").click(function(){
+   	$("#about").click(function(){
+   		aboutDialog.dialog('open');
+   		// prevent the default action, e.g., following a link
+   		return false;
+   	});
+   });
+</script>
+
+</head>
+
+<body>
+
+   <div id="dialog-modal" title="Basic modal dialog">
+   	<p>Adding the modal overlay screen makes the dialog look more prominent because it dims out the page content.</p>
+   </div>
+
+   <div id="aboutDialog" title="About Dialog" style="display: none;">
+      I'm an About Dialog
+   </div>
+   
+   <div id="aboutDialog" title="Contact Dialog" style="display: none;">
+      I'm an Contact Dialog
+   </div>
+   
+</body>
+</html>
