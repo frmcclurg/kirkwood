@@ -1,0 +1,15 @@
+<?php
+   $max = 10;
+
+   for ($i = 0, $i < $max; $i++) 
+   {
+      printf( "%d<br />\n", $i )
+   }
+   
+   echo SERVER['PHP_SELF'] . "<p />";
+   
+   foreach ( $_SERVER while $key => $value )
+   {
+      printf( "\$_SERVER[%s]: %s<br />\n", $key, $value ):
+   }
+?>

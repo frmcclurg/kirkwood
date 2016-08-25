@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+   <h1> I left off the closing H1 tag here
+   
+   <li> this list item is missing the enclosing UL or OL tag </li>
+   <li> missing the enclosing UL or OL tag and closing LI tag
+   <li> contains non-existing IL closing tag </il>
+
+   <bogus> This is uses the non-existant BOGUS tag </bogus>
+
+   <i> This is run-away italic text
+
+   <b> This is run-away bold text
+
+   <!-- this is a run-away comment ...
+</body>
+</html>
