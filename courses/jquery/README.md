@@ -1,5 +1,5 @@
-# Supplimental jQuery Course
+# Supplemental jQuery Course
 
-Website that hosts the Supplimental jQuery Course slides and examples.
+Website that hosts the Supplemental jQuery Course slides and examples.
 
 http://cecert.kirkwood.edu/~fmcclurg/courses/jquery/
