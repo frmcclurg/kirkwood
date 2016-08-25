@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>setTimeout() via Anonymous Function</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>setTimeout() via Anonymous Function</h1>
+
+<button 
+   onclick="window.setTimeout(  // timer
+      function() {  // anonymous function
+         alert( 'I am awake now!' ); 
+      }, 5000  // wait 5 secs (5000 ms)
+   );">
+      Awaken alert in 5 seconds
+</button>
+</body>
+</html>

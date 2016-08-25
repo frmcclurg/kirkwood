@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Attribute or Method Typo</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+
+   <h1>Attribute or Method Typo</h1>
+
+<script>
+// strings can not have a return in the middle
+var einstein = "Great ideas often receive
+violent opposition from mediocre minds.";  // error
+
+// attribute misspelled. should be "einstein.length"
+var size = einstein.len;  // error
+
+// attribute "einstein.length" is not method
+var chars = einstein.length();  // error
+
+// should be "getElementById()" with "Id" not "ID"
+var title = document.getElementByID("mainTitle");  // error
+
+// should be "getElementsByTagName()" with "Elements" plural
+var para = document.getElementByTagName("p");  // error
+</script>
+</body>
+</html>

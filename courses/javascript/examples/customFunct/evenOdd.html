@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Function within Function</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Calling Function within Function</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+   
+<script>
+/**
+ * Determine if number is even
+ * 
+ * @param  num     Passed parameter
+ * @return retVal  True if parameter is even
+ */
+function isEven( num ) {
+   var retVal;
+
+   if ( ( num % 2 ) == 0 )  // evenly divisible by 2
+      retVal = true;
+   else
+      retVal = false;
+   
+   return( retVal );  // ta senda
+}
+
+
+/**
+ * Determine if number is odd
+ * 
+ * @param  num  Passed parameter
+ * @return      True if param odd
+ */
+function isOdd( num ) {
+   // call function and negate
+   return( ! isEven( num ) );
+}
+
+
+var str;
+
+for ( var i = 0; i < 10; i++ ) {
+   str = "isEven(" + i + "): " + 
+          isEven(i) + "   " + 
+         "isOdd(" + i + "): " + 
+          isOdd(i);
+
+   console.log( str );
+}
+</script>
+</body>
+</html>

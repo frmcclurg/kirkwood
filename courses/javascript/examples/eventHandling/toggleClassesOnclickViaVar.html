@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Toggle Classes via onclick()</title>
+   <meta charset="ISO-8859-1">
+
+<style type="text/css">
+   div#divBlock {
+      height: 100px;
+      width: 300px;
+      font-size: 50px;
+      line-height: 50px;  /* vertical alignment */
+      text-align: center;  /* horizontal alignment */
+      font-weight: bold;
+      padding: 25px;
+   }
+
+   div.redDiv {
+      background-color: red;
+   }
+
+   div.greenDiv {
+      background-color: green;
+   }
+</style>
+</head>
+<body>
+   <h1>Toggle Classes via onclick()</h1>
+
+<div class="redDiv" id="divBlock">Red</div>
+
+<script>
+var toggleBlock = document.getElementById("divBlock");
+
+toggleBlock.onclick = function() {
+   if ( toggleBlock.className == "redDiv" ) {
+      toggleBlock.className = "greenDiv";
+      toggleBlock.innerHTML = "Green";
+   } else {
+      toggleBlock.className = "redDiv";
+      toggleBlock.innerHTML = "Red";
+   }
+};
+</script>
+</body>
+</html>

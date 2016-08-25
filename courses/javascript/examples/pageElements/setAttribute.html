@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Setting Attributes via setAttribute()</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Setting Attributes via setAttribute()</h1>
+
+<h2 id="leftHead"> Sub-Title Left </h2>
+<h2> Sub-Title Center </h2>
+<h2> Sub-Title Right </h2>
+
+<script>
+   var tagName = document.getElementsByTagName( "h2" );
+   tagName[0].setAttribute( "align", "left" );
+   tagName[1].setAttribute( "align", "center" );
+   tagName[2].setAttribute( "align", "right" );
+
+   var idName = document.getElementById( "leftHead" );
+   idName.setAttribute( "style", "color: red;" );
+</script>
+</body>
+</html>

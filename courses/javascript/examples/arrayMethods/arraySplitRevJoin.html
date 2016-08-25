@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Array Methods: split(), reverse(), join()</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Array Methods: split(), reverse(), join()</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+   
+<script>
+var word = "stressed";
+console.log( "Original word: " + word );
+
+var letters = word.split( "" );  // convert string to array
+console.log( "Array after split(): " + letters );
+
+letters.reverse();  // reverse array order
+console.log( "Array after reverse(): " + letters );
+
+var backward = letters.join( "" );  // convert array to str
+console.log( "Word after join(): " + backward );
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Call Argument and Parameter Mismatch</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+
+   <h1>Call Argument and Parameter Mismatch</h1>
+   
+<script>
+// argument mismatch between call and definition
+// three parameters in function definition
+function calculateSum( a, b, c ) {
+   console.log( "c = " + c );
+   return( a + b + c );
+}
+
+// two arguments in function call
+var result = calculateSum( 500, 1000 );
+console.log( result );
+</script>
+</body>
+</html>

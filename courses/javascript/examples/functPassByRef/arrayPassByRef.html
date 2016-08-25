@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Pass by Reference: Arrays</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Pass by Reference: Arrays</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+/**
+ * Append boys on end of girls array
+ *
+ * @param  girls  Array of girls
+ */
+function brady( girls ) {
+   var boys = [ "Mike", "Greg", "Peter", "Bobby" ];
+
+   girls.push( boys );
+}
+
+var girls = [ "Carol", "Marcia", "Jan", "Cindy" ];
+
+console.log( "Before brady(): " + girls );
+brady( girls );  // pass array ref
+console.log( "After brady(): " + girls );
+</script>
+</body>
+</html>

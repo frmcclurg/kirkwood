@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Array Iteration with "for"</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Where Am I?</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+var pageTitles = [ 'Home', 'About', 'Contact',
+                   'Array Iteration with \"for\"' ];
+
+for ( var i = 0; i < pageTitles.length; i++ ) {
+
+   // title of current page in document.title
+   if ( document.title == pageTitles[i] )
+      console.log( "Current page: " +
+            pageTitles[i] );
+   else
+      console.log( "Not current page: " +
+            pageTitles[i] );
+}
+</script>
+</body>
+</html>

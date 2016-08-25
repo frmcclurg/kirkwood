@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Window Load via ready() Event</title>
+   <meta charset="ISO-8859-1">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+   $( document ).ready( function() {
+      $(".quote").click( function() {
+         alert( "What's up?" );
+      });
+   });
+</script>
+</head>
+
+<body>
+<h1>Window Load via ready() Event</h1>
+
+<p class="quote">
+   "Power corrupts. Trust me on this. And because
+   power corrupts, humanity's need for those in
+   power to be of high character increases as the
+   importance of the position of leadership
+   increases."  <br>
+   &ndash; Andy Andrews, <em>The Final Summit</em>
+</p>
+</body>
+</html>

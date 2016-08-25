@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Ternary Solution: Two</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Ternary Solution: Two</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+// declare and initialize object
+var zoo = {
+      hippopotam: 3,
+      cact: 2,
+      octop: 1,
+};
+
+for ( var key in zoo ) {
+   var noun = key;
+   var count = zoo[key];
+
+   // append plural or singular ending
+   noun += ( count != 1 ) ? "i" : "us";
+   var quote = "Zoo has " + count + " " + noun;
+   console.log( quote );
+}
+</script>
+</body>
+</html>

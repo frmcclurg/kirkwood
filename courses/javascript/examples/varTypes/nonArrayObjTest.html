@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>What's a Non-Array Object?</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Non-Array Object Test</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+// create non-array object
+var objThing = {};
+
+console.log( "Object type via typeof(): " + 
+      typeof( objThing ) );  // object
+
+isObj = ( 
+      Object.prototype.toString.call( objThing ) == 
+         "[object Object]" );  // true
+
+console.log( "Object type via prototype: " + 
+      isObj );  // true
+</script>
+</body>
+</html>

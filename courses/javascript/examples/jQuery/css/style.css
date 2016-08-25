@@ -1,0 +1,11 @@
+div#divBlock {
+   width: 300px;
+   height: 100px;
+   line-height: 100px;  /* vertical alignment */
+   text-align: center;  /* horizontal alignment */
+   font-size: 50px;
+   font-weight: bold;
+   color: yellow;
+   background-color: blue;
+   padding: 25px;
+}

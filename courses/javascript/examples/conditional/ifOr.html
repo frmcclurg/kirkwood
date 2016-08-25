@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Conditional: if and || (OR)</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Conditional: if and || (OR)</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+// open text prompt dialog
+var answer = window.prompt("Type YES or NO");
+
+if ( ( answer == "yes" ) ||  // lowercase
+     ( answer == "YES" ) ) {  // uppercase
+   console.log( "You typed YES" );
+}
+else if ( ( answer == "no" ) ||  // lowercase
+          ( answer == "NO" ) ) {  // uppercase
+   console.log( "You typed NO" );
+}
+else {
+   console.log( "Didn't follow directions!" );
+}
+</script>
+</body>
+</html>

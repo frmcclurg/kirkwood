@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Getting Nested Elements</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Getting Nested Elements</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<ul id="ulList">
+   <li> First Item </li>
+   <li> Second Item </li>
+   <li> Third Item </li>
+</ul>
+
+<script>
+   var parent = document.getElementById( "ulList" );
+   console.log( "Parent HTML:" + parent.innerHTML );
+
+   var child = parent.getElementsByTagName( "li" );
+
+   for ( var i = 0; i < child.length; i++ ) {
+      console.log( "Child HTML:" + child[i].innerHTML );
+   }
+</script>
+</body>
+</html>

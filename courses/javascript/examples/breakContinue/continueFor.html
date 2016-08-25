@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Simple "continue" within "for"</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Simple "continue" within "for"</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+for ( i = -5; i < 5; i++ ) {
+
+   // prevent division by zero
+   if ( i == 0 ) {
+      // skip iteration
+      continue;
+   }
+
+   console.log( 1 / i );
+}
+</script>
+</body>
+</html>

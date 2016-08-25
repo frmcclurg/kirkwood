@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Custom Function: fuddify()</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Custom Function: fuddify()</h1>
+
+<script>
+/**
+ * Converts string to Elmer Fudd speech
+ *
+ * @param  origSpeak  Original text
+ * @return fuddSpeak  Converted text
+ */
+function fuddify( origSpeak ) {
+   var fuddSpeak = origSpeak;
+
+   if ( typeof( origSpeak ) != "string" )
+      fuddSpeak = "Can't Fuddify: " + origSpeak;
+
+   fuddSpeak = fuddSpeak.replace( /r/g, 'w' );
+   fuddSpeak = fuddSpeak.replace( /R/g, 'W' );
+
+   return( fuddSpeak );
+}
+
+
+var quote = "Shhh.\n" +
+   "Be very very quiet.\n" +
+   "I'm hunting rabbits.";
+
+// function call
+var fuddTalk = fuddify( quote );
+
+alert( fuddTalk );
+</script>
+</body>
+</html>

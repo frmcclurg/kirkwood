@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Pass by Reference: Objects</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Pass by Reference: Objects</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+/**
+ * Transforms Dr. Jekyll into Mr. Hyde
+ * Also reverts Mr. Hyde back into Dr. Jekyll
+ *
+ * @param  creature  Object
+ */
+function elixir( creature ) {
+   if ( creature.name == "Dr. Jekyll" )
+      creature.name = "Mr. Hyde";
+   else if ( creature.name == "Mr. Hyde" )
+      creature.name = "Dr. Jekyll";
+   else
+      console.error( "Can't transform" +
+         creature.name );
+}
+
+var person = { name: "Dr. Jekyll" };
+
+console.log( "Before elixir(): " + person.name ); // Dr. Jekyll
+elixir( person );  // pass object reference
+console.log( "After elixir(): " + person.name );  // Mr. Hyde
+</script>
+</body>
+</html>

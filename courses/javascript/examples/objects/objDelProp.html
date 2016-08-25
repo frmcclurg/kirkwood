@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Deleting Object Properties</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Deleting Object Properties</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+var car = {
+   make: 'Toyota',
+   model: 'Corolla',
+   mpgCity: 30,
+   mpgHwy: 42,
+};
+
+// delete properties
+delete car.mpgCity;  // deleting via dot
+delete car['mpgHwy'];  // deleting via key
+
+// display entire object
+console.log( car );
+</script>
+</body>
+</html>

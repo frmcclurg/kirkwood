@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Events via Listener</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Events via Listener</h1>
+
+<p> First paragraph </p>
+
+<p> Second paragraph </p>
+
+<p> Third paragraph </p>
+
+<script>
+   // note: does not work on IE8 and previous
+   document.addEventListener( 'click', clickFunct, false );
+   
+   function clickFunct() {
+      alert( 'First alert' );
+   }
+
+   document.addEventListener( 'click', function() {
+      alert( 'Second alert' );
+   }, false );
+</script>
+</body>
+</html>

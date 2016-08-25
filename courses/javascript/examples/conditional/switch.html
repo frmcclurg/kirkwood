@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Conditional Statement: "switch"</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Conditional Statement: "switch"</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+var answer = window.prompt("Type YES or NO");
+
+switch ( answer ) {
+   case 'YES' :
+      console.log( "You typed \"YES\"" );
+      break;  // exit case
+   case 'NO' :
+      console.log( "You typed \"NO\"" );
+      break;  // exit case
+   default :  // else no other matches
+      console.log( "You rebel!" );
+      break;  // exit case
+}
+</script>
+</body>
+</html>

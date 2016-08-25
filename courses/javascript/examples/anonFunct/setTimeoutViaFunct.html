@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>setTimeout() via Function</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>setTimeout() via Function</h1>
+
+<script>
+   function awakenFromSleep() {
+      alert('I am awake now!'); 
+   }
+</script>
+
+<button 
+   onclick="window.setTimeout(  // timer
+         // note: no parenthesis on function call
+         // otherwise it is called immediately
+         awakenFromSleep,  // call function
+         5000  // wait 5 seconds (5000 ms)
+   );">
+      Awaken alert in 5 seconds
+</button>
+</body>
+</html>

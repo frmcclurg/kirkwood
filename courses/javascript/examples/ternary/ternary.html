@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Simple Ternary Operator</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Simple Ternary Operator</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+var word = "Alumn";
+var totalCount = 4;
+var maleCount = 1;
+
+if ( maleCount >= 1 ) {  // use masculine tense
+   // append singular or plural ending
+   word += ( totalCount == 1 ) ? "us" : "i";
+} else {  // use feminine tense
+   // append singular or plural ending
+   word += ( totalCount == 1 ) ? "a" : "ae";
+}
+
+var report = word + " attended: " + totalCount;
+console.log( report );
+</script>
+</body>
+</html>

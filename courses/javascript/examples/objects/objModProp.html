@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Modifying Object Properties</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Modifying Object Properties</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+var car = {
+   make: 'Toyota',
+   model: 'Corolla',
+   mpgCity: 30,
+   mpgHwy: 42,
+};
+
+car.mpgCity = 28;  // property via dot
+car['mpgHwy'] = 37;  // property via key
+
+// display entire object
+console.log( car );
+</script>
+</body>
+</html>

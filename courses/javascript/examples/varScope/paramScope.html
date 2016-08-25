@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Parameter Variable Scope</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Parameter Variable Scope</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+function clobber( star ) {  // local variable parameter
+   // displays "Danny Kaye"
+   console.log( "Inside clobber() before: " + star );
+
+   star = "John Wayne";
+
+   // displays "John Wayne"
+   console.log( "In clobber() after: " + star );
+}
+
+var star = "Danny Kaye";  // global variable
+
+// displays "Danny Kaye"
+console.log( "Before clobber() call: " + star );
+
+clobber( star );  // variable argument "Passed by Value"
+
+// displays "Danny Kaye"
+console.log( "After clobber() call: " + star );
+</script>
+</body>
+</html>

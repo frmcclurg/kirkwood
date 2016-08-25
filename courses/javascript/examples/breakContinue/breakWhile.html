@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Complex "break" within "while"</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Complex "break" within "while"</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+// count number of times to draw a queen (using a while)
+var guess = 0;  // number of guesses
+var cards = [ "Ace", "King", "Queen", "Jack" ];  // face cards
+var min = 0;  // first array index
+var max = cards.length - 1;  // largest index
+
+while ( true ) {  // infinite loop
+   guess++;
+   
+   // pick random number between 0 and 3
+   var pick = Math.floor( (Math.random() * max) + min );
+
+   if ( cards[pick] == "Queen" ) {  // found it!
+      console.log( guess + ". Right: " + cards[pick] );
+      break;  // stop guessing exit loop
+   }
+
+   console.log( guess + ". Wrong: " + cards[pick] );
+}
+
+console.log( "Guesses: " + guess );
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Copying Object References</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Copying Object References</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+var wildAnimal = {
+   name: 'squirrel',
+   wild: true,
+};
+
+// copy reference of original object
+var zooAnimal = wildAnimal;
+
+// modify the reference property
+zooAnimal.wild = false;
+
+// display original property
+console.log( wildAnimal.wild );  // false
+</script>
+</body>
+</html>

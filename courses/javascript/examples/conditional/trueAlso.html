@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>What is also true?</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>What is also true?</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+   
+<script>
+console.log( Boolean( ! false ) );  // true
+console.log( Boolean( "this is a string" ) );
+console.log( Boolean( 1 / 0 ) );  // true (Infinity)
+console.log( Boolean( -1 / 0 ) );  // true (-Infinity)
+console.log( Boolean( Infinity ) );  // true
+console.log( Boolean( -Infinity ) );  // true
+</script>
+</body>
+</html>

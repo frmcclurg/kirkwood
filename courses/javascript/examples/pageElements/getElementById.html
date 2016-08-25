@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Get Element by ID</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+<h1>Get Element by ID</h1>
+
+<p id="quote">
+   "... virtually everything that truly qualifies a person
+   for leadership is directly related to character. It's
+   not about style, status, personal charisma, clout,
+   or worldly measurements of success. Integrity is
+   the main issue that makes the difference between
+   a good leader and a bad one." -- John MacArthur
+</p>
+
+<script>
+   var txt = document.getElementById( "quote" );
+   alert( txt.innerHTML );  // get content of <p>
+</script>
+</body>
+</html>

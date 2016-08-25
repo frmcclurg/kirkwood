@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Regular Expression: match()</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Regular Expression: match()</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+var haystack = "Find a needle in there";
+
+// dot: any character
+// star: one or more of previous (greedy)
+regex = /ne.+/;  // matches "needle in there"
+var result = haystack.match( regex );
+
+// find all occurrences
+console.log( result[0] );  // first match
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Global Variable Scope</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Global Variable Scope</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+function clobber() {
+   star = "John Wayne";  // note: no var keyword
+   // displays "John Wayne"
+   console.log( "Inside clobber(): " + star );
+}
+
+var star = "Danny Kaye";  // global variable
+
+// displays "Danny Kaye"
+console.log( "Before clobber(): " + star );
+
+clobber();  // function call
+
+// displays "John Wayne"
+console.log( "After clobber(): " + star );
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Array "Copy by Reference"</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Array "Copy by Reference"</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+var brady = [ "Mike", "Greg", "Peter", "Bobby",
+              "Carol", "Marcia", "Jan", "Cindy" ];
+
+var twins = brady;  // copy the array reference
+
+console.log( "brady before sort(): " + brady );
+console.log( "twins before sort(): " + twins );
+
+brady.sort();  // sort the original array
+
+console.log( "brady after sort(): " + brady );
+console.log( "twins after sort(): " + twins );
+</script>
+</body>
+</html>

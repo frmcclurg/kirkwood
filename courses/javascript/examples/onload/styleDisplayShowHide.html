@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Show/Hide Page Elements</title>
+   <meta charset="ISO-8859-1">
+
+<script>
+// show and hide biography
+function initializeBio() {
+	document.getElementById("author").onclick = function() {
+		var bioObj = document.getElementById("bio");
+		
+		if ( document.getElementById("bio").style.display == "block" ) {
+			// set CSS to hide the DIV
+			document.getElementById("bio").style.display = "none";
+		} else {
+			// set CSS to show the DIV
+			document.getElementById("bio").style.display = "block";
+		}
+	};
+
+	// now hide it on the initial page load.
+	document.getElementById("bio").style.display = "none";
+}
+
+window.onload =  function() {
+	initializeBio();
+};
+</script>
+</head>
+
+<body>
+
+<h1>Show/Hide Page Elements</h1>
+
+<p>"I never met a bitter person who was thankful.  
+Or a thankful person who was bitter." 
+-- <a href="#" id="author">Nick Vujicic</a></p>
+
+<div id="bio">
+   Australian motivational speaker born with tetra-amelia syndrome, a rare disorder characterized by the absence of all four limbs. As a child, he struggled mentally and emotionally as well as physically, but eventually came to terms with his disability and, at the age of seventeen, started his own non-profit organization, Life Without Limbs. Vujicic presents motivational speeches worldwide which focus on life with a disability, hope and finding meaning in life.
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Event via Anonymous Function</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Event via Anonymous Function</h1>
+
+<p id="clickMe">
+   Is is better to lose your life
+   than to waste it.  -- John Piper
+</p>
+
+<script>
+   var para = document.getElementById( "clickMe" );
+   
+   // define event handler
+   para.onclick = function() {  // anonymous function
+      alert( "Did you need something?" );
+   };  // note: semi-colon required
+</script>
+</body>
+</html>

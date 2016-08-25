@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Text clock via setInterval()</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Text clock via setInterval()</h1>
+
+<form>
+   <input type="text" id="clock">
+</form>
+
+<script>
+   var textClock = document.getElementById( "clock" );
+
+   setInterval( function() {
+      var now = new Date();  // current time
+      var textStr = now.toLocaleTimeString();  // convert to string
+      textClock.value = textStr;  // set text value
+   }, 1000 );  // update every one second
+</script>
+</body>
+</html>

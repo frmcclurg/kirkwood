@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Regular Expression: test()</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Regular Expression: test()</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+   
+<script>
+var haystack = "Find a needle in there";
+
+var regex = /needle/;  // regular expression
+console.log( regex.test( haystack ) );  // true
+
+regex = /NEEDLE/i;  // ignore case modifier
+console.log( regex.test( haystack ) );  // true
+</script>
+</body>
+</html>

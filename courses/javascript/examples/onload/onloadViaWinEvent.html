@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Page onload() via window event</title>
+   <meta charset="ISO-8859-1">
+
+   <script>
+      function waitUntilLoaded() {
+         alert( 'Page load complete' );
+      }
+      
+      window.onload = function() {
+         waitUntilLoaded();
+      }
+   </script>
+</head>
+
+<body>
+
+<h1>Page onload() via window event</h1>
+
+</body>
+</html>

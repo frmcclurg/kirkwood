@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Array Object Test</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Array Object Test</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+// create array object
+var arrayThing = [];
+
+console.log( "Array type via typeof(): " + 
+      typeof( arrayThing ) );  // object
+
+console.log( "Array type via isArray(): " + 
+      Array.isArray( arrayThing ) );  // true
+
+isArray = ( 
+      Object.prototype.toString.call( arrayThing ) == 
+         "[object Array]" );  // true
+
+console.log( "Array type via prototype: " + 
+      isArray );  // true
+</script>
+</body>
+</html>

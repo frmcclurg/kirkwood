@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Event onblur() Validation</title>
+   <meta charset="ISO-8859-1" />
+</head>
+<body>
+   <h1>Event onblur() Validation</h1>
+
+<form>
+   Age: <input type="text" id="age" 
+           onblur="checkNumber( 'age' );" /> <p />
+   IQ: <input type="text" id="iq" 
+           onblur="checkNumber( 'iq' );" /> <p />
+   <input type="button" 
+          value="Post to Facebook" />
+</form>
+
+<script>
+   function checkNumber( id ) {
+      var textObj = document.getElementById( id );
+      var textStr = textObj.value;
+      var regExp = /^\d+$/;  // one or more numeric digits
+      
+      if ( ! textStr.match( regExp ) ) {
+         alert( "'" + textStr + "' is not a number." );
+      }
+   }
+</script>
+</body>
+</html>

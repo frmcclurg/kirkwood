@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Prompt value via onfocus() and onblur()</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Prompt value via onfocus() and onblur()</h1>
+
+<form>
+   First: <input type="text" id="fname" value="first name only"> <br> <br>
+   Last: <input type="text" id="lname" value="enter last name"> <br> <br>
+</form>
+
+<script>
+   function textPrompt( id, prompt ) {
+      var nameField = document.getElementById( id );
+
+      nameField.onfocus = function() {
+         if ( nameField.value == prompt ) {
+            nameField.value = "";  // clear prompt
+         }
+      };
+
+      nameField.onblur = function() {
+         if ( nameField.value == "") {  // no text input
+            nameField.value = prompt;  // display prompt
+         }
+      };
+   }
+
+   textPrompt( "fname", "first name only" );
+   textPrompt( "lname", "enter last name" );
+</script>
+</body>
+</html>

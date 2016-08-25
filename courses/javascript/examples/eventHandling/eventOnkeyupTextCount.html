@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Event onkeyup() via text entry</title>
+   <meta charset="ISO-8859-1" />
+</head>
+<body>
+   <h1>Event onkeyup() via text entry</h1>
+
+<form>
+   <textarea rows="5" cols="60" 
+             id="textBlock">
+"Desire that your life count for something great! Long for 
+your life to have eternal significance. Want this! Don't 
+coast through life without a passion."
+-- John Piper, Don't Waste Your Life</textarea> <p />
+   
+   Count: <input type="text" id="textCount" 
+                 size="4" value="193" readonly />
+</form>
+
+<script>
+   var textObj = document.getElementById( "textBlock" );
+   var counterObj = document.getElementById( "textCount" );
+
+   textObj.onkeyup = function() {
+      counterObj.value = textObj.value.length;
+   };
+</script>
+</body>
+</html>

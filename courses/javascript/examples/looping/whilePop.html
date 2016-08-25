@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>More Complex "while" Loop</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>More Complex "while" Loop</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+var ingalls = [ "Charles", "Caroline",
+                "Mary", "Laura",
+                "Carrie" ];
+
+// while array is not empty
+while ( ingalls.length != 0 ) {
+   console.log( "Array: " + ingalls +
+       " Length: " + ingalls.length );
+
+   person = ingalls.pop();
+   console.log( "Popped: " + person );
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Custom Function: randomInt()</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Custom Function: randomInt()</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+/**
+ * Random integer within a range
+ *
+ * @param  min     Start of range
+ * @param  max     End of range
+ * @return rndInt  Random integer between
+ *                 min and max inclusive
+ */
+function randomInt( min, max ) {
+
+   var rndInt = Math.floor(
+         ( Math.random() * max ) + min );
+
+   // value returned to function call
+   return( rndInt );
+}
+
+
+/*
+ * Generate 10 random numbers
+ */
+for ( var i = 0; i < 10; i++ ) {
+
+   // function call
+   var rndNum = randomInt( 1, 10 );
+
+   console.log( i + ": " + rndNum );
+}
+</script>
+</body>
+</html>

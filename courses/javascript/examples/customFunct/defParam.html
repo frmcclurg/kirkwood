@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Default Parameters and Arguments</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Default Parameters and Arguments</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+   
+<script>
+/**
+ * Calculate the area of rectangle
+ * 
+ * @param  height  Rectangle height
+ * @param  width   Rectangle width (optional)
+ * @return area    Rectangle area
+ */
+function areaRectangle( height, width ) {
+   var area;
+
+   // check if parameter is specified
+   if ( typeof( width ) != 'undefined' )
+      area = height * width;
+   else
+      area = height * height;
+   
+   return( area );
+}
+
+
+var height = 5;
+var width = 10;
+var areaRt, areaSq;
+
+// pass two arguments
+areaRt = areaRectangle( height, width );
+console.log( areaRt );
+
+// pass one argument
+areaSq = areaRectangle( width );
+console.log( areaSq );
+</script>
+</body>
+</html>

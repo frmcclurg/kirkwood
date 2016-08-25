@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Regular Expression Anchors</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Regular Expression Anchors</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+   var haystack = "Find a needle in there";
+
+   regex = /^find/i;  // start of string
+   console.log( regex.test( haystack ) );
+
+   regex = /here$/;  // end of string
+   console.log( regex.test( haystack ) );
+</script>
+</body>
+</html>

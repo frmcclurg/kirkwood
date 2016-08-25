@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Get Elements by Tag Name</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+<h1>Get Elements by Tag Name</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to have it enabled to display the results. </p>
+
+<h2>George Washington Carver</h2>
+
+<p>George Washington Carver (January 1864 - January 5, 1943), was
+   an American scientist, botanist, educator, and inventor.</p>
+
+<h2>Sir Isaac Newton</h2>
+
+<p>Sir Isaac Newton PRS MP (25 December 1642 - 20 March 1727) was
+   an English physicist and mathematician (described in his own day
+   as a "natural philosopher") who is widely recognised as one of the
+   most influential scientists of all time and as a key figure in the
+   scientific revolution.</p>
+
+<h2>Blaise Pascal</h2>
+
+<p>Blaise Pascal (19 June 1623 - 19 August 1662) was a French
+   mathematician, physicist, inventor, writer and Christian
+   philosopher.</p>
+
+
+<script>
+var links = document.getElementsByTagName( "h2" );
+
+for ( var i = 0; i < links.length; i++ ) {
+   console.log( links[i].innerHTML );  // <h2> content
+}
+</script>
+</body>
+</html>

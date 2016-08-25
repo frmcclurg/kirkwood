@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Variable Length Arguments</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Variable Length Parameters and Arguments</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+   
+<script>
+/**
+ * Sum the passed arguments
+ * 
+ * @param  arguments  Any number of arguments
+ * @return total      Summation of arguments
+ */
+function add()
+{
+   var total = 0;
+
+   for ( var i = 0; i < arguments.length; i++ )
+   {
+      var num = arguments[i];
+      
+      if ( typeof( arguments[i] ) == 'number' )
+         total += num;
+   }
+   
+   return( total );
+}
+
+
+var sum;
+
+sum = add( 1 );  // pass one args
+console.log( sum );
+
+sum = add( 1, 2 );  // pass two args
+console.log( sum );
+
+sum = add( 1, 2, 3 );  // pass three args
+console.log( sum );
+</script>
+</body>
+</html>

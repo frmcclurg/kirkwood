@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Changing Content via innerHTML</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Changing Content via innerHTML</h1>
+
+<div id="footer"></div>
+
+<script>
+   var today = new Date();
+   var year = today.getFullYear();
+   
+   var foot = document.getElementById( "footer" );
+   foot.innerHTML = "&copy; Copyright " + year;
+</script>
+</body>
+</html>

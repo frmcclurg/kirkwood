@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Setting Date via Arguments</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+<h1>Setting Date via Arguments</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to have it enabled to display the results. </p>
+
+<script>
+var year = 1941;
+var month = 12 - 1;  // 0=january
+var day = 7;
+var hour = 7;
+var minute = 48;
+
+// set to December 7, 1941 7:48 am
+var pearlHarbor = new Date( year, month, day,
+                            hour, minute );
+console.log( pearlHarbor );
+</script>
+</body>
+</html>

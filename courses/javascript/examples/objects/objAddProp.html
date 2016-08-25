@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Adding Object Properties</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>Adding Object Properties</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+
+<script>
+var car = {
+   make: 'Toyota',
+   model: 'Corolla',
+   mpgCity: 30,
+   mpgHwy: 42,
+};
+
+// add new properties
+car.color = 'Silver';  // add property via dot
+car['edition'] = 'LE';  // add property via key
+
+// display entire object
+console.log( car );
+</script>
+</body>
+</html>

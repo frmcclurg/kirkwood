@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Syntax Errors</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+
+   <h1>Syntax Errors</h1>
+   
+<script>
+function myFunction( {  // missing ")"
+   // missing double quote on string
+   console.log("You called myFunction);
+}
+
+window.onload = function() {
+   myFunction();
+}  // missing semi-colon on statement
+</script>
+</body>
+</html>

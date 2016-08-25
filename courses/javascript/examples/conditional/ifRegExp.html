@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>"if" and Regular Expressions</title>
+   <meta charset="ISO-8859-1">
+</head>
+<body>
+   <h1>"if" and Regular Expressions</h1>
+
+   <p> Note: This script uses the JavaScript Console.
+   You will need to enable it to display the results. </p>
+   
+<script>
+// open text prompt dialog
+var answer = window.prompt("Type YES or NO");
+
+var regexYes = /^y$|yes/i;  // "y" or "yes"
+var regexNo = /^n$|no/i;  // "n" or "no"
+
+if ( regexYes.test( answer ) ) {
+   console.log( "You typed YES" );
+}
+else if ( regexNo.test( answer ) ) {
+   console.log( "You typed NO" );
+}
+else {
+   console.log( "Didn't follow directions!" );
+}
+</script>
+</body>
+</html>
