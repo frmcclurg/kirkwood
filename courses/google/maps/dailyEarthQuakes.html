@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+
+<script>
+   var locations = [ 
+      ['93km W of Talkeetna, Alaska', -151.9057, 62.4113, 1],
+      ['90km N of Manley Hot Springs, Alaska', -150.7566, 65.8117, 2],
+      ['66km NNW of Larsen Bay, Alaska', -154.2301, 58.1239, 3],
+      ['4km SSW of Salcha, Alaska', -146.9318, 64.4897, 4]
+   ];
+
+   var myCenter = new google.maps.LatLng(62.6630188, -157.544551);
+
+   function initialize() {
+      var mapProp = {
+         center : myCenter,
+         zoom : 3,
+         mapTypeId : google.maps.MapTypeId.ROADMAP
+      };
+
+      var map = new google.maps.Map(document.getElementById("googleMap"),
+            mapProp);
+
+      for ( i = 0; i < locations.length; i++ ) {
+         var tooltip = locations[i][0];
+         var lng = locations[i][1];
+         var lat = locations[i][2];
+         var latLng = new google.maps.LatLng(lat, lng);
+
+         var marker = new google.maps.Marker({
+            position : latLng,
+            title : tooltip,
+            map : map
+         });
+      }
+
+      // marker.setMap(map);
+   }
+
+   google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+
+<body>
+   <div id="googleMap" style="width: 500px; height: 380px;"></div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+   <title>Google Maps Multiple Markers</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+   <script src="http://maps.google.com/maps/api/js?sensor=false"
+      type="text/javascript"></script>
+
+<script type="text/javascript">
+   /**
+    * Set center of map
+    */
+    
+   /**
+    * Function to initialize the map
+    */
+   function initialize() {
+      var locations = [ 
+         ['93km W of Talkeetna, Alaska', -151.9057, 62.4113, 1],
+         ['90km N of Manley Hot Springs, Alaska', -150.7566, 65.8117, 2],
+         ['66km NNW of Larsen Bay, Alaska', -154.2301, 58.1239, 3],
+         ['4km SSW of Salcha, Alaska', -146.9318, 64.4897, 4]
+      ];
+
+      var mapProp = {
+         zoom : 4,
+         center : new google.maps.LatLng(65.246563, -151.216426),
+         mapTypeId : google.maps.MapTypeId.ROADMAP
+      };
+
+      var map = new google.maps.Map(document.getElementById('googleMap'), mapProp );
+
+      var marker, i;
+
+      for (i = 0; i < locations.length; i++) {
+         tooltip = locations[i][0];
+         lat = locations[i][1];
+         lng = locations[i][2];
+         weight = locations[i][3];
+         
+         // console.log( tooltip );
+         
+         marker = new google.maps.Marker({
+            position : new google.maps.LatLng(lat, lng),
+            title : tooltip,
+            map : map
+         });
+
+         /*
+         google.maps.event.addListener(marker, 'click', function(marker, i) {
+            infowindow.setContent(locations[i][0]);
+            infowindow.open(map, marker);
+         });
+         */
+      }
+   }
+   
+   /* Add an event listener to load map.  initialize() is loaded
+      when page is loaded */
+   google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+<body>
+   <div id="googleMap" style="width: 100%; height: 100%;"></div>
+</body>
+</html>
