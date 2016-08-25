@@ -1,0 +1,366 @@
+/*
+ * CSS of entire document
+ */
+body
+{
+   font-family: Georgia, Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+/* 
+ * href icon captions 
+ */
+a.icons
+{
+   text-decoration: none;
+}
+
+
+/*
+ * controls the copyright notice
+ */
+td.copyright
+{
+   font-size: 6pt;
+   color: #CCCCCC;
+}
+
+
+/*
+ * the style text
+ */
+td.styleAttribute
+{
+   font-family: Courier, MS Courier New, Prestige, monospace;
+}
+
+
+/*
+ * style of the code output
+ */
+td.output
+{
+   background-color: #f5f5f5;  /* WhiteSmoke */
+   font-family: Courier, MS Courier New, Prestige, monospace;
+   font-size: 8pt;
+}
+
+
+/*
+ * style of the code
+ */
+td.code
+{
+   background-color: #fff8dc;  /* cornsilk */
+   /* background-color: #f0fff0; */  /* honeydew */
+   /* background-color: #ffffe0; */   /* LightYellow */
+   font-family: Courier, MS Courier New, Prestige, monospace;
+   font-size: 8pt;
+}
+
+
+/*
+ * the style drop-down list
+ */
+select.styleDropdown
+{
+   font-family: Courier, MS Courier New, Prestige, monospace;
+}
+
+
+/*
+ * the style drop-down list
+ */
+option.styleOption
+{
+   font-family: Courier, MS Courier New, Prestige, monospace;
+}
+
+
+/*
+ * CSS inactive tab for table cells
+ */
+th.inactiveTab
+{
+   background-image: ../common/images/tabs/inactive.65x30.png;
+   background: Gray;
+   padding: 5px;
+}
+
+
+/*
+ * CSS inactive tab for table cells
+ */
+th.activeTab
+{
+   background-image: "../common/images/tabs/active.65x30.png";
+   background: #D3D3D3;
+   padding: 5px;
+}
+
+
+/*
+ * CSS table characteristics
+ */
+table.tableStyle
+{
+	background: gray;
+	border-spacing: 2px;
+}
+
+
+/*
+ * CSS header characteristics
+ */
+tr.headerRow
+{
+   background: #CCCCFF;
+}
+
+
+a.inactiveTab
+{
+   color: LightGray;
+   border-color: transparent;
+}
+
+/*
+ * CSS inactive tab named class
+ */
+a.inactiveTab:link,
+a.inactiveTab:active,
+a.inactiveTab:visited,
+a.inactiveTab:hover
+{
+   text-decoration: none;
+   border-width: 1px;
+   border-style: solid;
+}
+
+
+/*
+ * CSS inactive tab named class
+ */
+a.inactiveTab:link,
+a.inactiveTab:active,
+a.inactiveTab:visited,
+{
+   border-color: transparent;
+   color: LightGray;
+}
+
+
+/*
+ * CSS inactive tab named class
+ */
+a.inactiveTab:hover
+{
+   border-color: Red;
+   color: White;
+}
+
+
+/*
+ * Use Harvard-type outline style for nested ordered lists
+ */
+ol.outline
+{
+   list-style-type: upper-roman
+}
+
+ol ol.outline
+{
+   list-style-type: upper-alpha
+}
+
+ol ol ol.outline
+{
+   list-style-type: decimal
+}
+
+ol ol ol ol.outline
+{
+   list-style-type: lower-alpha
+}
+
+ol ol ol ol ol.outline
+{
+   list-style-type: lower-roman
+}
+
+
+/*
+ * Use 1, 1.1, 1.1.1 dot numbered outline style for nested ordered lists
+ */
+ol.dotOutline
+{
+   list-style-type: none;
+   counter-reset: ordered;
+}
+
+ol li.dotOutline:before
+{
+   counter-increment: ordered;
+   content: counters(ordered, ".");
+}
+
+
+/*
+ * Use an image as the bullet on a list
+ */
+ul.apacheBullets
+{
+   list-style-type: disc;
+   list-style-image: url(/common/images/icons/bullets/16x16/ff0000.png);
+}
+
+
+/*
+ * Cancel the image as the bullet on a sub-list
+ */
+ul ul.apacheBullets
+{
+   list-style-type: none;
+   list-style-image: none;
+}
+
+
+/*
+ * Use an image as the bullet on a list
+ */
+ul.cssBullets
+{
+   list-style-type: disc;
+   list-style-image: url(/common/images/icons/bullets/16x16/ffff00.png);
+}
+
+
+/*
+ * Cancel the image as the bullet on a sub-list
+ */
+ul ul.cssBullets
+{
+   list-style-type: none;
+   list-style-image: none;
+}
+
+
+/*
+ * Use an image as the bullet on a list
+ */
+ul.htmlBullets
+{
+   list-style-type: disc;
+   list-style-image: url(/common/images/icons/bullets/16x16/00ff00.png);
+}
+
+
+/*
+ * Cancel the image as the bullet on a sub-list
+ */
+ul ul.htmlBullets
+{
+   list-style-type: none;
+   list-style-image: none;
+}
+
+
+/*
+ * Use an image as the bullet on a list
+ */
+ul.javascriptBullets
+{
+   list-style-type: disc;
+   list-style-image: url(/common/images/icons/bullets/16x16/ff00ff.png);
+}
+
+
+/*
+ * Cancel the image as the bullet on a sub-list
+ */
+ul ul.javascriptBullets
+{
+   list-style-type: none;
+   list-style-image: none;
+}
+
+
+/*
+ * Use an image as the bullet on a list
+ */
+ul.mysqlBullets
+{
+   list-style-type: disc;
+   list-style-image: url(/common/images/icons/bullets/16x16/0000ff.png);
+}
+
+
+/*
+ * Cancel the image as the bullet on a sub-list
+ */
+ul ul.mysqlBullets
+{
+   list-style-type: none;
+   list-style-image: none;
+}
+
+
+/*
+ * Use an image as the bullet on a list
+ */
+ul.phpBullets
+{
+   list-style-type: disc;
+   list-style-image: url(/common/images/icons/bullets/16x16/ccccff.png);
+}
+
+
+/*
+ * Cancel the image as the bullet on a sub-list
+ */
+ul ul.phpBullets
+{
+   list-style-type: none;
+   list-style-image: none;
+}
+
+
+/*
+ * Use an image as the bullet on a list
+ */
+ul.unixBullets
+{
+   list-style-type: disc;
+   list-style-image: url(/common/images/icons/bullets/16x16/ffcc99.png);
+}
+
+
+/*
+ * Cancel the image as the bullet on a sub-list
+ */
+ul ul.unixBullets
+{
+   list-style-type: none;
+   list-style-image: none;
+}
+
+
+/*
+ * Use an image as the bullet on a list
+ */
+ul.perlBullets
+{
+   list-style-type: disc;
+   list-style-image: url(/common/images/icons/bullets/16x16/00ffff.png);
+}
+
+
+/*
+ * Cancel the image as the bullet on a sub-list
+ */
+ul ul.perlBullets
+{
+   list-style-type: none;
+   list-style-image: none;
+}
+

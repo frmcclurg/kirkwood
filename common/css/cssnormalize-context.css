@@ -1,0 +1,359 @@
+/*
+YUI 3.15.0 (build 834026e)
+Copyright 2014 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+
+/*!
+Pure v0.3.0
+Copyright 2013 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+https://github.com/yui/pure/blob/master/LICENSE.md
+*/ 
+
+/*!
+normalize.css v1.1.2 | MIT License | git.io/normalize
+Copyright (c) Nicolas Gallagher and Jonathan Neal
+*/
+.normalized article,
+.normalized aside,
+.normalized details,
+.normalized figcaption,
+.normalized figure,
+.normalized footer,
+.normalized header,
+.normalized hgroup,
+.normalized main,
+.normalized nav,
+.normalized section,
+.normalized summary
+   {
+   display: block
+}
+
+.normalized audio,
+.normalized canvas,
+.normalized video {
+   display: inline-block
+}
+
+.normalized audio:not ([controls] ){
+   display: none;
+   height: 0
+}
+
+.normalized [hidden] {
+   display: none
+}
+
+.normalized {
+   font-size: 100%;
+   -ms-text-size-adjust: 100%;
+   -webkit-text-size-adjust: 100%
+}
+
+.normalized,
+.normalized button,
+.normalized input,
+.normalized select,
+.normalized textarea
+   {
+   font-family: sans-serif
+}
+
+.normalized body {
+   margin: 0
+}
+
+.normalized a:focus {
+   outline: thin dotted
+}
+
+.normalized a:active,
+.normalized a:hover {
+   outline: 0
+}
+
+.normalized h1,
+.normalized h2,
+.normalized h3,
+.normalized h4,
+.normalized h5,
+.normalized h6 {
+   font-weight: bold;
+}
+
+.normalized h1 {
+   font-size: 2em;
+   margin: .67em 0
+}
+
+.normalized h2 {
+   font-size: 1.5em;
+   margin: .83em 0
+}
+
+.normalized h3 {
+   font-size: 1.17em;
+   margin: 1em 0
+}
+
+.normalized h4 {
+   font-size: 1em;
+   margin: 1.33em 0
+}
+
+.normalized h5 {
+   font-size: .83em;
+   margin: 1.67em 0
+}
+
+.normalized h6 {
+   font-size: .67em;
+   margin: 2.33em 0;
+   font-weight: 900;
+}
+
+.normalized abbr[title] {
+   border-bottom: 1px dotted
+}
+
+.normalized b,
+.normalized strong {
+   font-weight: bold
+}
+
+.normalized blockquote, 
+.normalized q {
+   display: block;
+   margin: 1.12em 0;
+   margin-left: 40px; 
+   margin-right: 40px;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font-size: 100%;
+   font-weight: normal;
+   vertical-align: baseline;
+   background: transparent;
+   quotes: none;
+   border-left: 0px solid #EEEEEE;
+   font-color: red;
+}
+
+.normalized blockquote:before, 
+.normalized blockquote:after, 
+.normalized > q:before, 
+.normalized > q:after {
+   content: "";
+   content: none;
+   -moz-box-sizing: none;
+}
+
+.normalized cite,
+.normalized dfn,
+.normalized address {
+   font-style: italic
+}
+
+.normalized hr {
+   -moz-box-sizing: content-box;
+   box-sizing: content-box;
+   height: 0
+}
+
+.normalized mark {
+   background: #ff0;
+   color: #000
+}
+
+.normalized p,
+.normalized pre {
+   margin: 1em 0;
+   border: none
+}
+
+.normalized code,
+.normalized kbd,
+.normalized pre,
+.normalized samp
+   {
+   font-family: monospace, serif;
+   _font-family: 'courier new', monospace;
+   font-size: 1em;
+   color: #000000;
+   background-color: #FFFFFF;
+}
+
+.normalized code {
+   white-space: normal;
+}
+
+.normalized kbd {
+   box-shadow: none;
+}
+
+.normalized pre {
+   white-space: pre;
+   white-space: pre-wrap;
+   word-wrap: break-word
+}
+
+.normalized q {
+   quotes: none
+}
+
+.normalized q:before,
+.normalized q:after {
+   content: '';
+   content: none
+}
+
+.normalized small {
+   font-size: 80%
+}
+
+.normalized sub,
+.normalized sup {
+   font-size: 75%;
+   line-height: 0;
+   position: relative;
+   vertical-align: baseline
+}
+
+.normalized sup {
+   top: -0.5em
+}
+
+.normalized sub {
+   bottom: -0.25em
+}
+
+.normalized dl,
+.normalized menu,
+.normalized ol,
+.normalized ul
+   {
+   margin: 1em 0
+}
+
+.normalized dd {
+   margin: 0 0 0 40px
+}
+
+.normalized menu,
+.normalized ol,
+.normalized ul {
+   padding: 0 0 0 40px
+}
+
+.normalized nav ul,
+.normalized nav ol {
+   list-style: none;
+   list-style-image: none
+}
+
+.normalized img {
+   border: 0;
+   -ms-interpolation-mode: bicubic
+}
+
+.normalized svg:not (:root ){
+   overflow: hidden
+}
+
+.normalized figure {
+   margin: 0
+}
+
+.normalized form {
+   margin: 0
+}
+
+.normalized fieldset {
+   border: 1px solid #c0c0c0;
+   margin: 0 2px;
+   padding: .35em .625em .75em
+}
+
+.normalized legend {
+   border: 0;
+   padding: 0;
+   white-space: normal
+}
+
+.normalized button,
+.normalized input,
+.normalized select,
+.normalized textarea
+   {
+   font-size: 100%;
+   margin: 0;
+   vertical-align: baseline
+}
+
+.normalized button,
+.normalized input {
+   line-height: normal
+}
+
+.normalized button,
+.normalized select {
+   text-transform: none
+}
+
+.normalized button,
+.normalized input[type="button"],
+.normalized input[type="reset"],
+.normalized input[type="submit"]
+   {
+   -webkit-appearance: button;
+   cursor: pointer
+}
+
+.normalized button[disabled],
+.normalized input[disabled] {
+   cursor: default
+}
+
+.normalized input[type="checkbox"],
+.normalized input[type="radio"]
+   {
+   box-sizing: border-box;
+   padding: 0
+}
+
+.normalized input[type="search"] {
+   -webkit-appearance: textfield;
+   -moz-box-sizing: content-box;
+   -webkit-box-sizing: content-box;
+   box-sizing: content-box
+}
+
+.normalized input[type="search"]::-webkit-search-cancel-button,
+.normalized input[type="search"]::-webkit-search-decoration
+   {
+   -webkit-appearance: none
+}
+
+.normalized button::-moz-focus-inner,
+.normalized input::-moz-focus-inner
+   {
+   border: 0;
+   padding: 0
+}
+
+.normalized textarea {
+   overflow: auto;
+   vertical-align: top
+}
+
+.normalized table {
+   border-collapse: collapse;
+   border-spacing: 0
+}
+
+#yui3-css-stamp.cssnormalize-context {
+   display: none
+}
