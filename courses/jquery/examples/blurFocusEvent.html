@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="ISO-8859-1">
+   <title>blur() and focus() Events</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+   <style>
+      input {
+         background: whitesmoke;
+      }
+   </style>
+
+   <script>
+      $( 'document' ).ready( function() {
+         $( 'input' ).focus( function() {
+            $(this).css( 'background-color', 'azure' );
+         });
+
+         $( 'input' ).blur( function() {
+            $(this).css( 'background-color', 'whitesmoke' );
+         });
+      });
+   </script>
+</head>
+
+<body>
+   <h1>blur() and focus() Events</h1>
+
+   <p>This page illustrates "blur()" and "focus()"
+   events.&nbsp; It also uses the "$(this)" variable
+   to reference the current object instance when
+   setting the text background color via the "css()"
+   method.</p>
+
+   First:
+   <input type="text" name="fname"> <br> <br>
+   Last:
+   <input type="text" name="lname">
+</body>
+</html>

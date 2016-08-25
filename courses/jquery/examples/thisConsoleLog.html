@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="ISO-8859-1">
+   <title>"this" via console.log()</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+   <style>
+      input {
+         background: whitesmoke;
+      }
+   </style>
+
+<script>
+   $( 'document' ).ready( function() {
+      $( 'input' ).focus( function() {
+         console.log( "Focus: " +
+                      $(this).attr( 'name' ) );
+      });
+
+      $( 'input' ).blur( function() {
+         console.log( "Blur: " +
+                      $(this).attr( 'name' ) );
+      });
+   });
+</script>
+</head>
+
+<body>
+   <h1>"this" via console.log()</h1>
+
+   <p>This page also illustrates "blur()" and "focus()"
+   events.&nbsp; The timing of when the events are
+   fired can be observed by displaying the JavaScript
+   console via the browser plugin
+   <a href="http://getfirebug.com/"
+      target="_blank">Firebug</a>.</p>
+
+   First:
+   <input type="text" name="fname"> <br> <br>
+   Last:
+   <input type="text" name="lname">
+</body>
+</html>

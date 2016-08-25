@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="ISO-8859-1">
+   <title>blur() Event for Integer Validation</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+   <script>
+      /**
+       * Uses a regular expression to determine
+       * if passed string is an integer.
+       *
+       * @param  str    Value to test.
+       * @retval status Returns true if string
+       *                is an integer.
+       */
+      function isInteger( str ) {
+         var status = false;
+         var regex = /^[0-9]+$/;  // one or more numbers
+
+         if ( regex.test( str ) ||
+              ( str.length == 0 ) )
+         {
+            status = true;
+         }
+
+         return( status );
+      }
+
+      $( 'document' ).ready( function() {
+         $( 'input' ).blur( function() {
+           var str = $(this).val();
+
+            if ( ! isInteger( str ) )
+            {
+               alert( 'String "' + str +
+                    '" is not an integer.' );
+            }
+         });
+      });
+   </script>
+</head>
+
+<body>
+   <h1>blur() Event for Integer Validation</h1>
+
+   <p>The text element on this page uses the
+   "blur()" event to perform form validation.&nbsp;
+   If the value entered in the textbox is <em>not</em>
+   an integer, an alert dialog will display an error
+   message.</p>
+
+   Age: <input type="text" size="3"> <br> <br>
+   <button>Submit</button>
+</body>
+</html>

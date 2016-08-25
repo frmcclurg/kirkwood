@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="ISO-8859-1">
+   <title>keyup() Event Character Count via Span</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+   <script>
+      $( 'document' ).ready( function() {
+         $( 'textarea' ).keyup( function( event ) {
+            var str = $(this).val();
+            $( '#countSpan' ).html( str.length );
+         });
+      });
+   </script>
+</head>
+
+<body>
+   <h1>keyup() Event Character Count via Span</h1>
+
+   <p>The textarea element on this page uses the
+   "keyup()" event to count the number of characters
+   entered.&nbsp; The updated character count can be
+   observed via the span element below the textarea.</p>
+
+   <textarea></textarea> <br>
+   Character count: <span id="countSpan">0</span>
+</body>
+</html>

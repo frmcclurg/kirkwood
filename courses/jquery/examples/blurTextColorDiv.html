@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="ISO-8859-1">
+   <title>blur() Event and css() Method</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+   <style>
+      div#swatch {
+         border: 5px ridge blue;
+         width: 200px;
+         height: 100px;
+      }
+   </style>
+
+   <script>
+      $( 'document' ).ready( function() {
+         $( '#colorText' ).blur( function() {
+            var colorValue = $( '#colorText' ).val();
+            $( '#swatch' ).css( 'background-color', colorValue );
+         });
+      });
+   </script>
+</head>
+
+<body>
+   <h1>blur() Event and css() Method</h1>
+
+   <p>This page uses a "blur()" event to
+   to set the background color of the div
+   below via the "css()" method.&nbsp;
+   Enter the color name or hex value and
+   then press "tab" or click any where on
+   the page.</p>
+
+   Color:
+   <input type="text" id="colorText" size="12">
+   <input type="button" value="Colorize"> <br> <br>
+
+   <div id="swatch"></div>
+</body>
+</html>

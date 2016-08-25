@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="ISO-8859-1">
+   <title>keyup() Event Character Count via Console</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+   <script>
+      $( 'document' ).ready( function() {
+         $( 'textarea' ).keyup( function( event ) {
+            var str = $(this).val();
+            console.log( str.length );
+         });
+      });
+   </script>
+</head>
+
+<body>
+   <h1>keyup() Event Character Count via Console</h1>
+
+   <p>The textarea element on this page uses the
+   "keyup()" event to count the number of characters
+   entered.&nbsp; The changing character count can be
+   observed by displaying the JavaScript console via
+   the browser plugin
+   <a href="http://getfirebug.com/"
+      target="_blank">Firebug</a>.</p>
+
+   <textarea></textarea> <br>
+   Character count: 0
+</body>
+</html>

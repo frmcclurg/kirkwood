@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="ISO-8859-1">
+   <title>jQuery Events</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+</head>
+
+<body>
+   <h1>jQuery Events</h1>
+
+   <p>This page uses jQuery to attach a click
+   event to a push button which dynamically inserts
+   content into a paragraph via an anonymous
+   function.</p>
+
+   <button id="dontClick">
+      Don't Click Me!
+   </button> <br>
+   <p id="result"></p>
+
+   <script>
+      $( "#dontClick" ).click( function() {
+         $( "#result" ).html( "Ouch! That hurts." );
+      });
+   </script>
+</body>
+</html>

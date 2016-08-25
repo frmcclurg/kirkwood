@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="ISO-8859-1">
+   <title>ready() Method</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+   <script>
+      $( 'document' ).ready( function() {
+         var lang = $( "#language" ).val();
+         alert( "Language: '" + lang + "''" );
+      });
+   </script>
+</head>
+
+<body>
+   <h1>ready() Method</h1>
+
+   <p>The jQuery "ready()" method, which pops
+   up an alert dialog, is executed only after
+   this page completely loads.</p>
+
+   Language:
+   <input type="text" id="language"
+          value="jQuery">
+</body>
+</html>

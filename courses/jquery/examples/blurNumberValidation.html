@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="ISO-8859-1">
+   <title>blur() Event for Number Validation</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<script>
+   /**
+    * Uses a regular expression to determine
+    * if passed string is an integer or float.
+    *
+    * @param  str    Value to test
+    * @retval status Returns true if string is number
+    */
+   function isNumber( str ) {
+      var status = false;
+      var regex = /^[0-9.]+$/;  // numbers & decimal point
+
+      if ( regex.test( str ) ||
+           ( str.length == 0 ) )
+      {
+         status = true;
+      }
+
+      return( status );
+   }
+
+   $( 'document' ).ready( function() {
+      $( 'input' ).blur( function() {
+        var str = $(this).val();
+
+         if ( ! isNumber( str ) )
+         {
+            alert( 'String "' + str +
+                 '" is not a number.' );
+         }
+      });
+   });
+</script>
+</head>
+
+<body>
+   <h1>blur() Event for Number Validation</h1>
+
+   <p>The text elements on this page also use the
+   "blur()" event to perform form validation.&nbsp;
+   If the value entered in the textbox is <em>not</em>
+   an integer or a floating point number, an alert
+   dialog will display an error message.</p>
+
+   Mutual Fund A:
+   <input type="text" size="3">% <br> <br>
+   Mutual Fund B:
+   <input type="text" size="3">% <br> <br>
+   Mutual Fund C:
+   <input type="text" size="3">% <br> <br>
+   Mutual Fund D:
+   <input type="text" size="3">% <br> <br>
+   <hr>
+   <button>Submit</button>
+</body>
+</html>

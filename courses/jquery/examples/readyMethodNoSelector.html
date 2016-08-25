@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="ISO-8859-1">
+   <title>No Selector ready() Method</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+   <script>
+      $( function() {
+         var lang = $( "#language" ).val();
+         alert( "Language: '" + lang + "''" );
+      });
+   </script>
+</head>
+
+<body>
+   <h1>No Selector ready() Method</h1>
+
+   <p>This page uses an alternate syntax
+   for the "ready()" method.  This method
+   can only be used on the current document
+   so the selector is not required.</p>
+
+   Language:
+   <input type="text" id="language"
+          value="jQuery">
+</body>
+</html>

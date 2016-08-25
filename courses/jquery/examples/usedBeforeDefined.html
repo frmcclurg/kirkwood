@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="ISO-8859-1">
+   <title>"Used before defined" error</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+   <script>
+      var lang = $( "#language" ).val();
+      alert( "Language: '" + lang + "''" );
+   </script>
+</head>
+
+<body>
+   <h1>"Used before defined" error</h1>
+
+   <p>This script tries to retrieve a value from the page
+   before the element is defined.&nbsp; That is why the
+   alert displays the variable as 'undefined'.</p>
+
+   Language:
+   <input type="text" id="language"
+          value="jQuery">
+</body>
+</html>

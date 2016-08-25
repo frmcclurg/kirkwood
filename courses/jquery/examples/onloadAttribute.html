@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="ISO-8859-1">
+   <title>onload Attribute</title>
+
+   <script>
+      function initialize() {
+         var lang = document.getElementById( "language" );
+         alert( "Language: '" + lang.value + "''" );
+      }
+   </script>
+</head>
+
+<body onload="initialize()">
+   <h1>onload Attribute</h1>
+
+   <p>The custom function "initialize()", which
+   pops up an alert dialog, is only executed after
+   this page is completely loaded via an inline
+   HTML "onload" event.</p>
+
+   Language:
+   <input type="text" id="language"
+          value="jQuery">
+</body>
+</html>

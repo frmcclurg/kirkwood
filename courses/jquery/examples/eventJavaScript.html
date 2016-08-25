@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="ISO-8859-1">
+   <title>JavaScript Events</title>
+</head>
+
+<body>
+   <h1>JavaScript Events</h1>
+
+   <p>This page uses JavaScript to attach a click
+   event to a push button which dynamically inserts
+   content into a paragraph via an anonymous
+   function.</p>
+
+   <button id="dontClick">
+      Don't Click Me!
+   </button> <br>
+   <p id="result"></p>
+
+   <script>
+      var push = document.getElementById('dontClick');
+
+      push.onclick = function() {
+         var obj = document.getElementById('result');
+         obj.innerHTML = "Ouch! That hurts.";
+      };
+   </script>
+</body>
+</html>
