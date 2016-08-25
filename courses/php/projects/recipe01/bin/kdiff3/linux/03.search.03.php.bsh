@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Author: Fred R. McClurg
+
+cd /opt/lampp/htdocs/kirkwood/courses/php/projects/recipe01/bin/kdiff3/linux
+/usr/bin/kdiff3 ../../../search.02.php ../../../search.03.php

@@ -1,0 +1,18 @@
+/**
+ * @file    stylesIE.css
+ *
+ * @brief   Internet Explorer (IE) specific CSS Syles for entire application
+ * @author  Fred R. McClurg
+ * @date    February 10, 2010
+ */
+
+div.number
+{
+   top: 15px;
+}
+
+
+div.slash
+{
+   top: -15px;
+}

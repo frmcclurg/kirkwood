@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>C:\xampp\htdocs\kirkwood\courses\php\examples\oop\classProperty.php.html</title>
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="php">
+<meta name="settings" content="use_css,pre_wrap,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="none">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #000000; background-color: #ffffff; }
+body { font-family: monospace; color: #000000; background-color: #ffffff; }
+* { font-size: 1em; }
+.Constant { color: #ff00ff; }
+.Statement { color: #804040; font-weight: bold; }
+.PreProc { color: #a020f0; }
+.Comment { color: #0000ff; }
+.Type { color: #2e8b57; font-weight: bold; }
+.Special { color: #6a5acd; }
+.Identifier { color: #008080; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+-->
+</script>
+</head>
+<body>
+<pre id='vimCodeElement'>
+<span class="Special">&lt;?php</span>
+   <span class="Comment">/**</span>
+<span class="Comment">    * Defining class with public properties</span>
+<span class="Comment">    */</span>
+   <span class="Type">class</span> Car
+   <span class="Special">{</span>
+      <span class="Comment">// declaring class properties</span>
+      <span class="Type">public</span> <span class="Statement">$</span><span class="Identifier">make</span>;   <span class="Comment">// Toyota, Volkswagen, Ford, Honda, Chevrolet</span>
+      <span class="Type">public</span> <span class="Statement">$</span><span class="Identifier">model</span>;  <span class="Comment">// Mustang, Pontiac, Prius, Focus, Beetle</span>
+      <span class="Type">public</span> <span class="Statement">$</span><span class="Identifier">color</span>;
+      <span class="Type">public</span> <span class="Statement">$</span><span class="Identifier">year</span>;
+   <span class="Special">}</span>
+
+   <span class="Comment">// instantiating object instance</span>
+   <span class="Statement">$</span><span class="Identifier">companyCar</span> <span class="Statement">=</span> <span class="PreProc">new</span> Car;
+
+   <span class="Comment">// setting object properties</span>
+   <span class="Statement">$</span><span class="Identifier">companyCar</span><span class="Type">-&gt;</span>make <span class="Statement">=</span> &quot;<span class="Constant">Toyota</span>&quot;;
+   <span class="Statement">$</span><span class="Identifier">companyCar</span><span class="Type">-&gt;</span>model <span class="Statement">=</span> &quot;<span class="Constant">Corolla</span>&quot;;
+   <span class="Statement">$</span><span class="Identifier">companyCar</span><span class="Type">-&gt;</span>color <span class="Statement">=</span> &quot;<span class="Constant">Tan</span>&quot;;
+   <span class="Statement">$</span><span class="Identifier">companyCar</span><span class="Type">-&gt;</span>year <span class="Statement">=</span> <span class="Constant">1999</span>;
+
+   <span class="Comment">// using object properties</span>
+   <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">Make: %s&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">companyCar</span><span class="Type">-&gt;</span>make <span class="Special">)</span>;
+   <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">Model: %s&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">companyCar</span><span class="Type">-&gt;</span>model <span class="Special">)</span>;
+   <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">Color: %s&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">companyCar</span><span class="Type">-&gt;</span>color <span class="Special">)</span>;
+   <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">Year: %d&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">companyCar</span><span class="Type">-&gt;</span>year <span class="Special">)</span>;
+<span class="Special">?&gt;</span>
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

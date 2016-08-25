@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>C:\xampp\htdocs\kirkwood\courses\php\examples\oop\methodVisibilityExtends.php.html</title>
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="php">
+<meta name="settings" content="use_css,pre_wrap,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="none">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #000000; background-color: #ffffff; }
+body { font-family: monospace; color: #000000; background-color: #ffffff; }
+* { font-size: 1em; }
+.Constant { color: #ff00ff; }
+.Statement { color: #804040; font-weight: bold; }
+.Comment { color: #0000ff; }
+.Type { color: #2e8b57; font-weight: bold; }
+.Special { color: #6a5acd; }
+.PreProc { color: #a020f0; }
+.Identifier { color: #008080; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+-->
+</script>
+</head>
+<body>
+<pre id='vimCodeElement'>
+<span class="Special">&lt;?php</span>
+   <span class="Comment">/**</span>
+<span class="Comment">    * Demonstrate visibility of methods in sub-class</span>
+<span class="Comment">    */</span>
+   <span class="Type">class</span> MyClass <span class="Special">{</span>
+       <span class="Comment">// Declare a public method</span>
+       <span class="Type">public</span> <span class="PreProc">function</span> myPublic<span class="Special">(</span> <span class="Statement">$</span><span class="Identifier">status</span> <span class="Special">)</span> <span class="Special">{</span>
+          <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">%s method %s&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">status</span>, <span class="Constant">__METHOD__</span> <span class="Special">)</span>;
+       <span class="Special">}</span>
+
+       <span class="Comment">// Declare a protected method</span>
+       <span class="Type">protected</span> <span class="PreProc">function</span> myProtected<span class="Special">(</span> <span class="Statement">$</span><span class="Identifier">status</span> <span class="Special">)</span> <span class="Special">{</span>
+          <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">%s method %s&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">status</span>, <span class="Constant">__METHOD__</span> <span class="Special">)</span>;
+       <span class="Special">}</span>
+
+       <span class="Comment">// Declare a private method</span>
+       <span class="Type">private</span> <span class="PreProc">function</span> myPrivate<span class="Special">(</span> <span class="Statement">$</span><span class="Identifier">status</span> <span class="Special">)</span> <span class="Special">{</span>
+          <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">%s method %s&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">status</span>, <span class="Constant">__METHOD__</span> <span class="Special">)</span>;
+       <span class="Special">}</span>
+   <span class="Special">}</span>
+
+   <span class="Type">class</span> MySubClass <span class="Type">extends</span> MyClass <span class="Special">{</span>
+       <span class="Comment">// Also a public method</span>
+       <span class="PreProc">function</span> switchBoard<span class="Special">()</span> <span class="Special">{</span>
+          <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>myPublic<span class="Special">(</span> &quot;<span class="Constant">Inside MySubClass</span>&quot; <span class="Special">)</span>;
+          <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>myProtected<span class="Special">(</span> &quot;<span class="Constant">Inside MySubClass</span>&quot; <span class="Special">)</span>;
+          <span class="Comment">// $this-&gt;myPrivate( &quot;Inside MySubClass&quot; ); // fatal error</span>
+       <span class="Special">}</span>
+   <span class="Special">}</span>
+
+   <span class="Statement">$</span><span class="Identifier">mySubClass</span> <span class="Statement">=</span> <span class="PreProc">new</span> MySubClass;
+   <span class="Statement">$</span><span class="Identifier">mySubClass</span><span class="Type">-&gt;</span>switchBoard<span class="Special">()</span>; <span class="Comment">// public and protected work, not private</span>
+
+   <span class="Statement">$</span><span class="Identifier">mySubClass</span><span class="Type">-&gt;</span>myPublic<span class="Special">(</span> &quot;<span class="Constant">&lt;br&gt; Outside MySubClass</span>&quot; <span class="Special">)</span>; <span class="Comment">// works</span>
+   <span class="Comment">// $mySubClass-&gt;myProtected( &quot;&lt;br&gt; Outside MySubClass&quot; ); // fatal error</span>
+   <span class="Comment">// $mySubClass-&gt;myPrivate( &quot;&lt;br&gt; Outside MySubClass&quot; ); // fatal error</span>
+<span class="Special">?&gt;</span>
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

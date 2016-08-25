@@ -1,0 +1,8 @@
+#!/bin/bash
+
+file1=../../../create.html
+file2=../../../create.php
+cmd="kdiff3"
+
+echo $cmd $file1 $file2
+$cmd $file1 $file2

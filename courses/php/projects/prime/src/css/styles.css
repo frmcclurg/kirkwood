@@ -1,0 +1,72 @@
+/**
+ * @file    styles.css
+ *
+ * @brief   General CSS Syles for entire application
+ * @author  Fred R. McClurg
+ * @date    February 4, 2010
+ */
+
+/* attributes of the entire page */
+html body
+{
+   font-family: Georgia, "Times New Roman", Serif;
+}
+
+
+input[type=text]:focus, input[type=text]:hover
+{
+   background-color: #FFFF99;  /* Pale Dull Yellow */
+}
+
+
+h1.title
+{
+   text-align: center;
+}
+
+
+table.sieve
+{
+   table-layout: fixed;
+}
+
+
+th.cell
+{
+   font-size: 25px;
+   text-align: center;
+   padding: 5px;
+   width: 40px;
+   height: 40px;
+   overflow: hidden;
+}
+
+
+div.number
+{
+   position: relative;
+   left: 0px;
+   top: 5px;
+   width: 100%;
+   height: 50%;
+   z-index: -100;
+}
+
+
+div.slash
+{
+   position: relative;
+   left: 0px;
+   top: -15px;
+   width: 100%;
+   height: 50%;
+   z-index: 100;
+}
+
+
+p.copyright
+{
+   color: #CCCCCC;  /* Pale Gray */
+   font-size: 7pt;
+   text-align: center;
+}

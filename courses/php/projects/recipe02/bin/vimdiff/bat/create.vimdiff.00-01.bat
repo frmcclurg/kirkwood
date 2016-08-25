@@ -1,0 +1,2 @@
+REM "C:\Program Files\Vim\vim72\gvim.exe" -d ../../../create.00.php ../../../create.01.php
+"C:\Program Files (x86)\Vim\vim72\gvim.exe" -d ../../../create.00.php ../../../create.01.php

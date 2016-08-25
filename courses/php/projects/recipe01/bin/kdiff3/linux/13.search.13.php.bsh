@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /opt/lampp/htdocs/kirkwood/courses/php/projects/recipe01/bin/kdiff3/linux
+/usr/bin/kdiff3 ../../../search.12.php ../../../search.13.php

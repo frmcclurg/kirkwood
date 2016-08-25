@@ -1,0 +1,33 @@
+/*
+ * set color of tabs
+ */
+a.tabs
+{
+   color: #cccccc;
+   padding: 5px;
+   border-color: transparent;
+   text-decoration: none;
+   border-width: 1px;
+   border-style: solid;
+}
+
+
+/*
+ * creates rollover effect without
+ * images and without JavaScript
+ */
+a.tabs:hover
+{
+   border-color: Red;
+   color: White;
+}
+
+
+/*
+ * handles mouse down effects
+ */
+a.tabs:active
+{
+   border-color: Yellow;
+   color: Red;
+}

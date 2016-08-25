@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>E:\kirkwood\courses\php\examples\chapter05\capitalize.php.html</title>
+<meta name="Generator" content="Vim/7.2">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#e5e5e5" text="#000000"><font face="monospace">
+<span style="background-color: #f2f2f2"><font color="#6a5acd">&lt;?php</font></span><br>
+&nbsp;&nbsp; <font color="#a020f0">function</font>&nbsp;capitalize<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">str</font>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">allCaps</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#ff00ff">TRUE</font></span>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>if</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">allCaps</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>&nbsp;&nbsp;<font color="#0000ff">// default</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">str</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#008080">strtoupper</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">str</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>else</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">str</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#008080">strtolower</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">str</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">str</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#008080">ucwords</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">str</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>return</b></font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">str</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+<br>
+&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">origStr</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">hElLo wOrLd</font></span>&quot;;<br>
+<br>
+&nbsp;&nbsp; <font color="#008080">printf</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">Original: %s&lt;br /&gt;</font></span>&quot;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">origStr</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+<br>
+&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">newStr</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;capitalize<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">origStr</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+<br>
+&nbsp;&nbsp; <font color="#008080">printf</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">No default: %s&lt;br /&gt;</font></span>&quot;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">newStr</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+<br>
+&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">newStr</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;capitalize<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">origStr</font>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#ff00ff">FALSE</font></span>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+<br>
+&nbsp;&nbsp; <font color="#008080">printf</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">False all caps: %s&lt;br /&gt;</font></span>&quot;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">newStr</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+<span style="background-color: #f2f2f2"><font color="#6a5acd">?&gt;</font></span><br>
+</font></body>
+</html>

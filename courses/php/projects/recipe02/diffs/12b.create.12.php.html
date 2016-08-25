@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>C:\xampp\htdocs\kirkwood\courses\php\projects\recipe02\create.12.php.html</title>
+<meta name="Generator" content="Vim/7.2">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#e5e5e5" text="#000000"><font face="monospace">
+<span style="background-color: #f2f2f2"><font color="#6a5acd">&lt;?php</font></span><br>
+&nbsp;&nbsp; <font color="#0000ff">/**</font><br>
+<span style="background-color: #ffa0ff">&nbsp;&nbsp;&nbsp;&nbsp;* @file create.1</span><span style="background-color: #ff0000"><b>2</b></span><span style="background-color: #ffa0ff">.php</span><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;*/</font><br>
+<br>
+&nbsp;&nbsp; <font color="#0000ff">// initialize variables</font><br>
+&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">pageTitle</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">Create/Modify Recipe</font></span>&quot;;<br>
+<br>
+&nbsp;&nbsp; <font color="#0000ff">// 0, 1 &amp; 2. Initialize connect and use db</font><br>
+<span style="background-color: #e0e0e0"><font color="#000080">+--&nbsp;&nbsp;1 lines: require_once( &quot;include/login.php&quot; );</font></span><br>
+<br>
+&nbsp;&nbsp; <font color="#0000ff">// for HTML select/option creation</font><br>
+&nbsp;&nbsp; <font color="#a020f0">require_once</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">include/form.php</font></span>&quot;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+<br>
+&nbsp;&nbsp; <font color="#804040"><b>if</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">_REQUEST</font><span style="background-color: #f2f2f2"><font color="#6a5acd">[</font></span>'<span style="background-color: #f2f2f2"><font color="#ff00ff">submit</font></span>'<span style="background-color: #f2f2f2"><font color="#6a5acd">]</font></span>&nbsp;<font color="#804040"><b>==</b></font>&nbsp;'<span style="background-color: #f2f2f2"><font color="#ff00ff">Create</font></span>'&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>&nbsp;&nbsp;<font color="#0000ff">// create pressed</font><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+<span style="background-color: #ffa0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 3. Build the SQL statement</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">sql</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#008080">sprintf</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INSERT INTO recipe</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(name, content, category_id)</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VALUES ('%s', '%s', %d)</font></span>&quot;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">_REQUEST</font><span style="background-color: #f2f2f2"><font color="#6a5acd">[</font></span>'<span style="background-color: #f2f2f2"><font color="#ff00ff">title</font></span>'<span style="background-color: #f2f2f2"><font color="#6a5acd">]</font></span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">_REQUEST</font><span style="background-color: #f2f2f2"><font color="#6a5acd">[</font></span>'<span style="background-color: #f2f2f2"><font color="#ff00ff">content</font></span>'<span style="background-color: #f2f2f2"><font color="#6a5acd">]</font></span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">_REQUEST</font><span style="background-color: #f2f2f2"><font color="#6a5acd">[</font></span>'<span style="background-color: #f2f2f2"><font color="#ff00ff">category</font></span>'<span style="background-color: #f2f2f2"><font color="#6a5acd">]</font></span>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+&nbsp;&nbsp; <font color="#804040"><b>elseif</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">_REQUEST</font><span style="background-color: #f2f2f2"><font color="#6a5acd">[</font></span>'<span style="background-color: #f2f2f2"><font color="#ff00ff">submit</font></span>'<span style="background-color: #f2f2f2"><font color="#6a5acd">]</font></span>&nbsp;<font color="#804040"><b>==</b></font>&nbsp;'<span style="background-color: #f2f2f2"><font color="#ff00ff">Modify</font></span>'&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>&nbsp;&nbsp;<font color="#0000ff">// modify pressed</font><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+<span style="background-color: #ffa0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 3. Build the SQL statement</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">sql</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#008080">sprintf</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UPDATE recipe</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SET name = '%s',</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content = '%s',</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;category_id = %d</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WHERE id = '%d'</font></span><br>
+<span style="background-color: #e0e0e0"><font color="#000080">+--&nbsp;&nbsp;2 lines: LIMIT 1&quot;,</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">_REQUEST</font><span style="background-color: #f2f2f2"><font color="#6a5acd">[</font></span>'<span style="background-color: #f2f2f2"><font color="#ff00ff">content</font></span>'<span style="background-color: #f2f2f2"><font color="#6a5acd">]</font></span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">_REQUEST</font><span style="background-color: #f2f2f2"><font color="#6a5acd">[</font></span>'<span style="background-color: #f2f2f2"><font color="#ff00ff">category</font></span>'<span style="background-color: #f2f2f2"><font color="#6a5acd">]</font></span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">_REQUEST</font><span style="background-color: #f2f2f2"><font color="#6a5acd">[</font></span>'<span style="background-color: #f2f2f2"><font color="#ff00ff">id</font></span>'<span style="background-color: #f2f2f2"><font color="#6a5acd">]</font></span>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+&nbsp;&nbsp; <font color="#804040"><b>elseif</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">_REQUEST</font><span style="background-color: #f2f2f2"><font color="#6a5acd">[</font></span>'<span style="background-color: #f2f2f2"><font color="#ff00ff">id</font></span>'<span style="background-color: #f2f2f2"><font color="#6a5acd">]</font></span>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>&nbsp;&nbsp;<font color="#0000ff">// id passed on query string</font><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+<span style="background-color: #ffa0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 3. Build the SQL statement</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">sql</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#008080">sprintf</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELECT name, content, category_id</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FROM recipe</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WHERE id = %d</font></span>&quot;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">_REQUEST</font><span style="background-color: #f2f2f2"><font color="#6a5acd">[</font></span>'<span style="background-color: #f2f2f2"><font color="#ff00ff">id</font></span>'<span style="background-color: #f2f2f2"><font color="#6a5acd">]</font></span>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+<span style="background-color: #e0e0e0"><font color="#000080">+-- 23 lines: if ( $sql )&nbsp;&nbsp;// create/modify pressed or id passed.</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>elseif</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">_REQUEST</font><span style="background-color: #f2f2f2"><font color="#6a5acd">[</font></span>'<span style="background-color: #f2f2f2"><font color="#ff00ff">submit</font></span>'<span style="background-color: #f2f2f2"><font color="#6a5acd">]</font></span>&nbsp;<font color="#804040"><b>==</b></font>&nbsp;'<span style="background-color: #f2f2f2"><font color="#ff00ff">Modify</font></span>'&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>&nbsp;&nbsp;<font color="#0000ff">// modify pressed</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000ff">// 5. Obtain SQL UPDATE results</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#804040"><b>if</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#008080">mysqli_affected_rows</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">conn</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>&nbsp;<font color="#804040"><b>&gt;</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#ff00ff">0</font></span>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">// update was successful</font><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elseif ( $_REQUEST['id'] )&nbsp;&nbsp;// id passed on query string</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 5. Obtain the SQL results</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if ( $row = mysqli_fetch_assoc( $result ) )</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$_REQUEST['title'] = $row['name'];</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$_REQUEST['content'] = $row['content'];</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$_REQUEST['category'] = $row['category_id'];</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#6a5acd">?&gt;</font></span><br>
+<br>
+<font color="#008080">&lt;</font><font color="#804040"><b>html</b></font><font color="#008080">&gt;</font><br>
+<span style="background-color: #e0e0e0"><font color="#000080">+--136 lines: &lt;head&gt;</font></span><br>
+</font></body>
+</html>

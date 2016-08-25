@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>C:\xampp\htdocs\kirkwood\courses\php\projects\recipe02\create.11.php.html</title>
+<meta name="Generator" content="Vim/7.2">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#e5e5e5" text="#000000"><font face="monospace">
+<span style="background-color: #f2f2f2"><font color="#6a5acd">&lt;?php</font></span><br>
+&nbsp;&nbsp; <font color="#0000ff">/**</font><br>
+<span style="background-color: #ffa0ff">&nbsp;&nbsp;&nbsp;&nbsp;* @file create.1</span><span style="background-color: #ff0000"><b>1</b></span><span style="background-color: #ffa0ff">.php</span><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;*/</font><br>
+<br>
+&nbsp;&nbsp; <font color="#0000ff">// initialize variables</font><br>
+&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">pageTitle</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">Create/Modify Recipe</font></span>&quot;;<br>
+<br>
+&nbsp;&nbsp; <font color="#0000ff">// 0, 1 &amp; 2. Initialize connect and use db</font><br>
+<span style="background-color: #e0e0e0"><font color="#000080">+-- 56 lines: require_once( &quot;include/login.php&quot; );</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>if</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">_REQUEST</font><span style="background-color: #f2f2f2"><font color="#6a5acd">[</font></span>'<span style="background-color: #f2f2f2"><font color="#ff00ff">submit</font></span>'<span style="background-color: #f2f2f2"><font color="#6a5acd">]</font></span>&nbsp;<font color="#804040"><b>==</b></font>&nbsp;'<span style="background-color: #f2f2f2"><font color="#ff00ff">Create</font></span>'&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>&nbsp;&nbsp;<font color="#0000ff">// create pressed</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000ff">// 5. Obtain SQL INSERT results</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">_REQUEST</font><span style="background-color: #f2f2f2"><font color="#6a5acd">[</font></span>'<span style="background-color: #f2f2f2"><font color="#ff00ff">id</font></span>'<span style="background-color: #f2f2f2"><font color="#6a5acd">]</font></span>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#008080">mysqli_insert_id</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">conn</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elseif ( $_REQUEST['submit'] == 'Modify' )&nbsp;&nbsp;// modify pressed</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 5. Obtain SQL UPDATE results</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if ( mysqli_affected_rows( $conn ) &gt; 0 )</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// update was successful</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#6a5acd">?&gt;</font></span><br>
+<br>
+<font color="#008080">&lt;</font><font color="#804040"><b>html</b></font><font color="#008080">&gt;</font><br>
+&nbsp;&nbsp; <font color="#008080">&lt;</font><font color="#804040"><b>head</b></font><font color="#008080">&gt;</font><br>
+<span style="background-color: #e0e0e0"><font color="#000080">+--135 lines: &lt;title&gt;</font></span><br>
+</font></body>
+</html>

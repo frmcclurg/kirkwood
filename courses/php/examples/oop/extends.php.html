@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>C:\xampp\htdocs\kirkwood\courses\php\examples\oop\extends.php.html</title>
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="php">
+<meta name="settings" content="use_css,pre_wrap,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="none">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #000000; background-color: #ffffff; }
+body { font-family: monospace; color: #000000; background-color: #ffffff; }
+* { font-size: 1em; }
+.Constant { color: #ff00ff; }
+.Statement { color: #804040; font-weight: bold; }
+.PreProc { color: #a020f0; }
+.Comment { color: #0000ff; }
+.Type { color: #2e8b57; font-weight: bold; }
+.Special { color: #6a5acd; }
+.Identifier { color: #008080; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+-->
+</script>
+</head>
+<body>
+<pre id='vimCodeElement'>
+<span class="Special">&lt;?php</span>
+   <span class="Comment">/**</span>
+<span class="Comment">    * Using inheritance by extending a class</span>
+<span class="Comment">    */</span>
+   <span class="Type">class</span> Car
+   <span class="Special">{</span>
+      <span class="Comment">// declaring class properties</span>
+      <span class="Type">protected</span> <span class="Statement">$</span><span class="Identifier">make</span>;   <span class="Comment">// Toyota, Volkswagen, Ford, Honda, Chevrolet</span>
+      <span class="Type">protected</span> <span class="Statement">$</span><span class="Identifier">model</span>;  <span class="Comment">// Mustang, Pontiac, Prius, Focus, Beetle</span>
+      <span class="Type">protected</span> <span class="Statement">$</span><span class="Identifier">color</span>;
+      <span class="Type">protected</span> <span class="Statement">$</span><span class="Identifier">year</span>;
+
+      <span class="Comment">// class constructor</span>
+      <span class="PreProc">function</span> Car<span class="Special">(</span> <span class="Statement">$</span><span class="Identifier">make</span>, <span class="Statement">$</span><span class="Identifier">model</span>, <span class="Statement">$</span><span class="Identifier">color</span>, <span class="Statement">$</span><span class="Identifier">year</span> <span class="Special">)</span>
+      <span class="Special">{</span>
+         <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">&lt;br&gt; Inside method %s()&lt;br&gt;</span>&quot;, <span class="Constant">__METHOD__</span> <span class="Special">)</span>;
+         <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>make <span class="Statement">=</span> <span class="Statement">$</span><span class="Identifier">make</span>;
+         <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>model <span class="Statement">=</span> <span class="Statement">$</span><span class="Identifier">model</span>;
+         <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>color <span class="Statement">=</span> <span class="Statement">$</span><span class="Identifier">color</span>;
+         <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>year <span class="Statement">=</span> <span class="Statement">$</span><span class="Identifier">year</span>;
+      <span class="Special">}</span>
+
+      <span class="Comment">// define a class method</span>
+      <span class="PreProc">function</span> display<span class="Special">()</span>
+      <span class="Special">{</span>
+         <span class="Statement">$</span><span class="Identifier">indent</span> <span class="Statement">=</span> <span class="Identifier">str_repeat</span><span class="Special">(</span> &quot;<span class="Constant">&amp;nbsp;</span>&quot;, <span class="Constant">6</span> <span class="Special">)</span>;
+
+         <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">&lt;br&gt; Inside method %s()&lt;br&gt;</span>&quot;, <span class="Constant">__METHOD__</span> <span class="Special">)</span>;
+         <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">%s Make: %s&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">indent</span>, <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>make <span class="Special">)</span>;
+         <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">%s Model: %s&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">indent</span>, <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>model <span class="Special">)</span>;
+         <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">%s Color: %s&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">indent</span>, <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>color <span class="Special">)</span>;
+         <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">%s Year: %d&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">indent</span>, <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>year <span class="Special">)</span>;
+      <span class="Special">}</span>
+   <span class="Special">}</span>
+
+   <span class="Comment">// sub-class Truck inherits properties from base class Car</span>
+   <span class="Comment">// sub-class Truck overrides base class method display()</span>
+   <span class="Type">class</span> Truck <span class="Type">extends</span> Car
+   <span class="Special">{</span>
+      <span class="Type">private</span> <span class="Statement">$</span><span class="Identifier">payload</span>;
+
+      <span class="PreProc">function</span> Truck<span class="Special">(</span> <span class="Statement">$</span><span class="Identifier">make</span>, <span class="Statement">$</span><span class="Identifier">model</span>, <span class="Statement">$</span><span class="Identifier">color</span>, <span class="Statement">$</span><span class="Identifier">year</span>, <span class="Statement">$</span><span class="Identifier">payload</span> <span class="Special">)</span>
+      <span class="Special">{</span>
+         <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">&lt;br&gt; Inside method %s()&lt;br&gt;</span>&quot;, <span class="Constant">__METHOD__</span> <span class="Special">)</span>;
+         <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>Car<span class="Special">(</span> <span class="Statement">$</span><span class="Identifier">make</span>, <span class="Statement">$</span><span class="Identifier">model</span>, <span class="Statement">$</span><span class="Identifier">color</span>, <span class="Statement">$</span><span class="Identifier">year</span> <span class="Special">)</span>;
+         <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>payload <span class="Statement">=</span> <span class="Statement">$</span><span class="Identifier">payload</span>;
+      <span class="Special">}</span>
+
+      <span class="Comment">// Define a class method</span>
+      <span class="PreProc">function</span> display<span class="Special">()</span>
+      <span class="Special">{</span>
+         <span class="Statement">$</span><span class="Identifier">indent</span> <span class="Statement">=</span> <span class="Identifier">str_repeat</span><span class="Special">(</span> &quot;<span class="Constant">&amp;nbsp;</span>&quot;, <span class="Constant">6</span> <span class="Special">)</span>;
+
+         <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">&lt;br&gt; Inside method %s()&lt;br&gt;</span>&quot;, <span class="Constant">__METHOD__</span> <span class="Special">)</span>;
+         <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">%s Make: %s&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">indent</span>, <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>make <span class="Special">)</span>;
+         <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">%s Model: %s&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">indent</span>, <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>model <span class="Special">)</span>;
+         <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">%s Color: %s&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">indent</span>, <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>color <span class="Special">)</span>;
+         <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">%s Year: %d&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">indent</span>, <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>year <span class="Special">)</span>;
+         <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">%s Payload: %d&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">indent</span>, <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>payload <span class="Special">)</span>;
+      <span class="Special">}</span>
+   <span class="Special">}</span>
+
+   <span class="Comment">// Initial Car Object Properties</span>
+   <span class="Statement">$</span><span class="Identifier">theCar</span> <span class="Statement">=</span> <span class="PreProc">new</span> Car<span class="Special">(</span> &quot;<span class="Constant">Toyota</span>&quot;, &quot;<span class="Constant">Corolla</span>&quot;, &quot;<span class="Constant">Silver</span>&quot;, <span class="Constant">2001</span> <span class="Special">)</span>;
+
+   <span class="Comment">// Printing Car Properties</span>
+   <span class="Statement">$</span><span class="Identifier">theCar</span><span class="Type">-&gt;</span>display<span class="Special">()</span>;
+
+   <span class="Comment">// Initial Truck Object Properties</span>
+   <span class="Statement">$</span><span class="Identifier">theTruck</span> <span class="Statement">=</span> <span class="PreProc">new</span> Truck<span class="Special">(</span> &quot;<span class="Constant">Ford</span>&quot;, &quot;<span class="Constant">F-150</span>&quot;, &quot;<span class="Constant">White</span>&quot;, <span class="Constant">2015</span>, <span class="Constant">1654</span> <span class="Special">)</span>;
+
+   <span class="Comment">// Printing Truck Properties</span>
+   <span class="Statement">$</span><span class="Identifier">theTruck</span><span class="Type">-&gt;</span>display<span class="Special">()</span>;
+<span class="Special">?&gt;</span>
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

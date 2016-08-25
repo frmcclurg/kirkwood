@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>C:\Program Files\xampp\htdocs\courses\php\examples\chapter14\destroyCookie.php.html</title>
+<meta name="Generator" content="Vim/6.3">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#e5e5e5" text="#000000">
+<pre>
+<font color="#6a5acd">&lt;?php</font>
+   <font color="#0000ff">// create cookie</font>
+   <font color="#008080">setcookie</font><font color="#6a5acd">(</font> &quot;<font color="#ff00ff">one</font>&quot;, &quot;<font color="#ff00ff">Sugar</font>&quot;,
+              <font color="#008080">time</font><font color="#6a5acd">()</font> <font color="#804040"><b>+</b></font> <font color="#6a5acd">(</font><font color="#ff00ff">60</font> <font color="#804040"><b>*</b></font> <font color="#ff00ff">60</font><font color="#6a5acd">)</font> <font color="#6a5acd">)</font>;
+   <font color="#008080">setcookie</font><font color="#6a5acd">(</font> &quot;<font color="#ff00ff">two</font>&quot;, &quot;<font color="#ff00ff">Oatmeal</font>&quot;,
+              <font color="#008080">time</font><font color="#6a5acd">()</font> <font color="#804040"><b>+</b></font> <font color="#6a5acd">(</font><font color="#ff00ff">60</font> <font color="#804040"><b>*</b></font> <font color="#ff00ff">60</font><font color="#6a5acd">)</font> <font color="#6a5acd">)</font>;
+
+   <font color="#804040"><b>if</b></font> <font color="#6a5acd">(</font> <font color="#008080">isset</font><font color="#6a5acd">(</font> <font color="#804040"><b>$</b></font><font color="#008080">_COOKIE</font><font color="#6a5acd">[</font>'<font color="#ff00ff">one</font>'<font color="#6a5acd">]</font> <font color="#6a5acd">)</font> <font color="#6a5acd">)</font>
+      <font color="#008080">printf</font><font color="#6a5acd">(</font> &quot;<font color="#ff00ff">Contents \</font><font color="#804040"><b>$</b></font><font color="#008080">_COOKIE</font><font color="#ff00ff">['one']:</font>
+<font color="#ff00ff">               %s&lt;br /&gt;</font>&quot;, <font color="#804040"><b>$</b></font><font color="#008080">_COOKIE</font><font color="#6a5acd">[</font>'<font color="#ff00ff">one</font>'<font color="#6a5acd">]</font> <font color="#6a5acd">)</font>;
+
+   <font color="#804040"><b>if</b></font> <font color="#6a5acd">(</font> <font color="#008080">isset</font><font color="#6a5acd">(</font> <font color="#804040"><b>$</b></font><font color="#008080">_COOKIE</font><font color="#6a5acd">[</font>'<font color="#ff00ff">two</font>'<font color="#6a5acd">]</font> <font color="#6a5acd">)</font> <font color="#6a5acd">)</font>
+      <font color="#008080">printf</font><font color="#6a5acd">(</font> &quot;<font color="#ff00ff">Contents \</font><font color="#804040"><b>$</b></font><font color="#008080">_COOKIE</font><font color="#ff00ff">['two']:</font>
+<font color="#ff00ff">               %s&lt;br /&gt;</font>&quot;, <font color="#804040"><b>$</b></font><font color="#008080">_COOKIE</font><font color="#6a5acd">[</font>'<font color="#ff00ff">two</font>'<font color="#6a5acd">]</font> <font color="#6a5acd">)</font>;
+
+   <font color="#0000ff">// destroy cookie</font>
+   <font color="#008080">setcookie</font><font color="#6a5acd">(</font> &quot;<font color="#ff00ff">one</font>&quot;, &quot;&quot;, <font color="#008080">time</font><font color="#6a5acd">()</font> <font color="#804040"><b>-</b></font> <font color="#6a5acd">(</font><font color="#ff00ff">60</font> <font color="#804040"><b>*</b></font> <font color="#ff00ff">60</font><font color="#6a5acd">)</font> <font color="#6a5acd">)</font>;
+   <font color="#008080">setcookie</font><font color="#6a5acd">(</font> &quot;<font color="#ff00ff">one</font>&quot;, <font color="#ff00ff">FALSE</font>, <font color="#ff00ff">0</font> <font color="#6a5acd">)</font>;
+
+   <font color="#804040"><b>if</b></font> <font color="#6a5acd">(</font> <font color="#804040"><b>!</b></font> <font color="#008080">isset</font><font color="#6a5acd">(</font> <font color="#804040"><b>$</b></font><font color="#008080">_COOKIE</font><font color="#6a5acd">[</font>'<font color="#ff00ff">one</font>'<font color="#6a5acd">]</font> <font color="#6a5acd">)</font> <font color="#6a5acd">)</font>
+      <font color="#008080">echo</font> &quot;<font color="#ff00ff">\</font><font color="#804040"><b>$</b></font><font color="#008080">_COOKIE</font><font color="#ff00ff">['one'] deleted&lt;br /&gt;</font>&quot;;
+
+   <font color="#804040"><b>if</b></font> <font color="#6a5acd">(</font> <font color="#804040"><b>!</b></font> <font color="#008080">isset</font><font color="#6a5acd">(</font> <font color="#804040"><b>$</b></font><font color="#008080">_COOKIE</font><font color="#6a5acd">[</font>'<font color="#ff00ff">two</font>'<font color="#6a5acd">]</font> <font color="#6a5acd">)</font> <font color="#6a5acd">)</font>
+      <font color="#008080">echo</font> &quot;<font color="#ff00ff">\</font><font color="#804040"><b>$</b></font><font color="#008080">_COOKIE</font><font color="#ff00ff">['two'] deleted&lt;br /&gt;</font>&quot;;
+<font color="#6a5acd">?&gt;</font>
+</pre>
+</body>
+</html>

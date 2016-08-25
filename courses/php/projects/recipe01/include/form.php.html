@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>C:\xampp\htdocs\kirkwood\courses\php\projects\recipe01\include\form.php.html</title>
+<meta name="Generator" content="Vim/7.2">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#e5e5e5" text="#000000"><font face="monospace">
+<span style="background-color: #f2f2f2"><font color="#6a5acd">&lt;?php</font></span><br>
+<font color="#0000ff">/**</font><br>
+<font color="#0000ff">&nbsp;* @file form.php</font><br>
+<font color="#0000ff">&nbsp;*/</font><br>
+<br>
+<font color="#0000ff">/**</font><br>
+<font color="#0000ff">&nbsp;* @brief Puts column contents into a</font><br>
+<font color="#0000ff">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select/option drop-down list.</font><br>
+<font color="#0000ff">&nbsp;*</font><br>
+<font color="#0000ff">&nbsp;* @param $conn&nbsp;&nbsp;&nbsp;&nbsp; Database connection</font><br>
+<font color="#0000ff">&nbsp;* @param $table&nbsp;&nbsp;&nbsp;&nbsp;Name of table</font><br>
+<font color="#0000ff">&nbsp;* @param $column&nbsp;&nbsp; Name of column</font><br>
+<font color="#0000ff">&nbsp;* @param $selected ID of item selected</font><br>
+<font color="#0000ff">&nbsp;* @param $isBlank&nbsp;&nbsp;If true, list contains blank</font><br>
+<font color="#0000ff">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;item whose value is zero</font><br>
+<font color="#0000ff">&nbsp;*/</font><br>
+<font color="#a020f0">function</font>&nbsp;PrintDropDown<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">conn</font>, <font color="#804040"><b>$</b></font><font color="#008080">table</font>, <font color="#804040"><b>$</b></font><font color="#008080">column</font>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">selected</font>, <font color="#804040"><b>$</b></font><font color="#008080">isBlank</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+&nbsp;&nbsp; <font color="#0000ff">// 3. Build the SQL statement</font><br>
+&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">sql</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#008080">sprintf</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp; SELECT id, %s</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FROM %s</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ORDER BY %s</font></span>&quot;, <font color="#804040"><b>$</b></font><font color="#008080">column</font>, <font color="#804040"><b>$</b></font><font color="#008080">table</font>, <font color="#804040"><b>$</b></font><font color="#008080">column</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+<br>
+&nbsp;&nbsp; <font color="#0000ff">// 4. Execute the SQL statement</font><br>
+&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">result</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#008080">mysqli_query</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">conn</font>, <font color="#804040"><b>$</b></font><font color="#008080">sql</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+<br>
+&nbsp;&nbsp; <font color="#804040"><b>if</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>!</b></font>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">result</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>&nbsp;&nbsp;<font color="#0000ff">// sql failed</font><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>die</b></font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">Could not execute SQL</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;pre&gt;'</font></span><font color="#804040"><b>$</b></font><font color="#008080">sql</font><span style="background-color: #f2f2f2"><font color="#ff00ff">'&lt;/pre&gt; &lt;br /&gt;</font></span>&quot;&nbsp;<font color="#804040"><b>.</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#008080">mysqli_error</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">conn</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+<br>
+&nbsp;&nbsp; <font color="#008080">printf</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">&lt;select name='%s'&gt;</font></span><span style="background-color: #f2f2f2"><font color="#6a5acd">\n</font></span>&quot;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">table</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+<br>
+&nbsp;&nbsp; <font color="#804040"><b>if</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">isBlank</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#008080">printf</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">&lt;option value='0'&gt;</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/option&gt;</font></span><span style="background-color: #f2f2f2"><font color="#6a5acd">\n</font></span>&quot;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+<br>
+&nbsp;&nbsp; <font color="#0000ff">// 5. Display the results</font><br>
+&nbsp;&nbsp; <font color="#804040"><b>while</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">row</font>&nbsp;<font color="#804040"><b>=</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#008080">mysqli_fetch_assoc</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">result</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">selectAttr</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;&quot;&quot;;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">id</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">row</font><span style="background-color: #f2f2f2"><font color="#6a5acd">[</font></span>'<span style="background-color: #f2f2f2"><font color="#ff00ff">id</font></span>'<span style="background-color: #f2f2f2"><font color="#6a5acd">]</font></span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">value</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">row</font><span style="background-color: #f2f2f2"><font color="#6a5acd">[</font></span><font color="#804040"><b>$</b></font><font color="#008080">column</font><span style="background-color: #f2f2f2"><font color="#6a5acd">]</font></span>;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>if</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">id</font>&nbsp;<font color="#804040"><b>==</b></font>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">selected</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">selectAttr</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">selected</font></span>&quot;;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#008080">printf</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">&lt;option value='%d' %s&gt;</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%s</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/option&gt;</font></span><span style="background-color: #f2f2f2"><font color="#6a5acd">\n</font></span>&quot;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">id</font>, <font color="#804040"><b>$</b></font><font color="#008080">selectAttr</font>, <font color="#804040"><b>$</b></font><font color="#008080">value</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+<br>
+&nbsp;&nbsp; <font color="#008080">printf</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">&lt;/select&gt;</font></span><span style="background-color: #f2f2f2"><font color="#6a5acd">\n</font></span>&quot;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+<br>
+<span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span>&nbsp;&nbsp;<font color="#0000ff">// function PrintDropDown();</font><br>
+<br>
+<br>
+<font color="#0000ff">/**</font><br>
+<font color="#0000ff">&nbsp;* @brief Makes the state of a checkbox persistant</font><br>
+<font color="#0000ff">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(or &quot;sticky&quot;) between submissions.</font><br>
+<font color="#0000ff">&nbsp;*</font><br>
+<font color="#0000ff">&nbsp;* @param&nbsp;&nbsp;$isDefault&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;True if checkbox is checked by default</font><br>
+<font color="#0000ff">&nbsp;* @param&nbsp;&nbsp;$checkboxKey&nbsp;&nbsp;&nbsp;&nbsp;Name of checkbox in $_REQUEST</font><br>
+<font color="#0000ff">&nbsp;* @return $checkedStatus&nbsp;&nbsp;Returns &quot;checked=checked&quot; if checked</font><br>
+<font color="#0000ff">&nbsp;*/</font><br>
+<font color="#a020f0">function</font>&nbsp;StickyCheckbox<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">isDefault</font>, <font color="#804040"><b>$</b></font><font color="#008080">checkboxKey</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">isChecked</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#ff00ff">FALSE</font></span>;<br>
+<br>
+&nbsp;&nbsp; <font color="#804040"><b>if</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">_REQUEST</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>&nbsp;&nbsp;<font color="#0000ff">// form submitted</font><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>if</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#008080">array_key_exists</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">checkboxKey</font>, <font color="#804040"><b>$</b></font><font color="#008080">_REQUEST</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">isChecked</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#ff00ff">TRUE</font></span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+&nbsp;&nbsp; <font color="#804040"><b>else</b></font>&nbsp;&nbsp;<font color="#0000ff">// form not submitted</font><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>if</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">isDefault</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">isChecked</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#ff00ff">TRUE</font></span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+<br>
+&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">checkedStatus</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">isChecked</font>&nbsp;<font color="#804040"><b>?</b></font>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">checked=checked</font></span>&quot;&nbsp;<font color="#804040"><b>:</b></font>&nbsp;&quot;&quot;;<br>
+<br>
+&nbsp;&nbsp; <font color="#804040"><b>return</b></font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">checkedStatus</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+<br>
+<span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span>&nbsp;&nbsp;<font color="#0000ff">// function StickyCheckbox();</font><br>
+</font></body>
+</html>

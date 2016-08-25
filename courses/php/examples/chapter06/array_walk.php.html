@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>W:\courses\php\examples\chapter06\array_walk.php.html</title>
+<meta name="Generator" content="Vim/7.1">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#e5e5e5" text="#000000"><font face="monospace">
+<span style="background-color: #f2f2f2"><font color="#6a5acd">&lt;?php</font></span><br>
+&nbsp;&nbsp; <font color="#a020f0">function</font>&nbsp;printRow<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">value</font>, <font color="#804040"><b>$</b></font><font color="#008080">key</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#2e8b57"><b>static</b></font>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">evenOdd</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#ff00ff">0</font></span>;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>if</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">evenOdd</font>&nbsp;<font color="#804040"><b>%</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#ff00ff">2</font></span>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">bgColor</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">#9999CC</font></span>&quot;;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>else</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">bgColor</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">#CCCCFF</font></span>&quot;;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#008080">printf</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr bgcolor='</font></span><font color="#804040"><b>$</b></font><font color="#008080">bgColor</font><span style="background-color: #f2f2f2"><font color="#ff00ff">'</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; style='color: </font></span><font color="#804040"><b>$</b></font><font color="#008080">value</font><span style="background-color: #f2f2f2"><font color="#ff00ff">'&gt;</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt; </font></span><font color="#804040"><b>$</b></font><font color="#008080">key</font><span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&lt;/td&gt;</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt; </font></span><font color="#804040"><b>$</b></font><font color="#008080">value</font><span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&lt;/td&gt;</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/tr&gt;</font></span><span style="background-color: #f2f2f2"><font color="#6a5acd">\n</font></span>&quot;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">evenOdd</font><font color="#804040"><b>++</b></font>;<br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+<br>
+&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">color</font>&nbsp;<font color="#804040"><b>=</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#2e8b57"><b>array</b></font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;'<span style="background-color: #f2f2f2"><font color="#ff00ff">Red</font></span>'&nbsp;<font color="#804040"><b>=</b></font><font color="#804040"><b>&gt;</b></font>&nbsp;'<span style="background-color: #f2f2f2"><font color="#ff00ff">#FF0000</font></span>',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '<span style="background-color: #f2f2f2"><font color="#ff00ff">Green</font></span>'&nbsp;<font color="#804040"><b>=</b></font><font color="#804040"><b>&gt;</b></font>&nbsp;'<span style="background-color: #f2f2f2"><font color="#ff00ff">#00FF00</font></span>',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '<span style="background-color: #f2f2f2"><font color="#ff00ff">Blue</font></span>'&nbsp;<font color="#804040"><b>=</b></font><font color="#804040"><b>&gt;</b></font>&nbsp;'<span style="background-color: #f2f2f2"><font color="#ff00ff">#0000FF</font></span>',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '<span style="background-color: #f2f2f2"><font color="#ff00ff">Yellow</font></span>'&nbsp;<font color="#804040"><b>=</b></font><font color="#804040"><b>&gt;</b></font>&nbsp;'<span style="background-color: #f2f2f2"><font color="#ff00ff">#FFFF00</font></span>'&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+<br>
+&nbsp;&nbsp; <font color="#008080">printf</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">&lt;table border='1'&gt;</font></span><span style="background-color: #f2f2f2"><font color="#6a5acd">\n</font></span>&quot;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+&nbsp;&nbsp; <font color="#008080">array_walk</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">color</font>, '<span style="background-color: #f2f2f2"><font color="#ff00ff">printRow</font></span>'&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+&nbsp;&nbsp; <font color="#008080">printf</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">&lt;/table&gt;</font></span><span style="background-color: #f2f2f2"><font color="#6a5acd">\n</font></span>&quot;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+<span style="background-color: #f2f2f2"><font color="#6a5acd">?&gt;</font></span><br>
+</font></body>
+</html>

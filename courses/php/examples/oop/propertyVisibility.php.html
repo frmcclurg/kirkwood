@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>C:\xampp\htdocs\kirkwood\courses\php\examples\oop\propertyVisibility.php.html</title>
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="php">
+<meta name="settings" content="use_css,pre_wrap,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="none">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #000000; background-color: #ffffff; }
+body { font-family: monospace; color: #000000; background-color: #ffffff; }
+* { font-size: 1em; }
+.Constant { color: #ff00ff; }
+.Statement { color: #804040; font-weight: bold; }
+.Comment { color: #0000ff; }
+.Type { color: #2e8b57; font-weight: bold; }
+.Special { color: #6a5acd; }
+.Identifier { color: #008080; }
+.PreProc { color: #a020f0; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+-->
+</script>
+</head>
+<body>
+<pre id='vimCodeElement'>
+<span class="Special">&lt;?php</span>
+   <span class="Comment">/**</span>
+<span class="Comment">    * Demostrate visibility of properties from base class and sub-class</span>
+<span class="Comment">    */</span>
+   <span class="Type">class</span> BaseClass
+   <span class="Special">{</span>
+      <span class="Type">public</span> <span class="Statement">$</span><span class="Identifier">public</span> <span class="Statement">=</span> &quot;<span class="Constant">public initialized in BaseClass</span>&quot;;
+      <span class="Type">protected</span> <span class="Statement">$</span><span class="Identifier">protected</span> <span class="Statement">=</span> &quot;<span class="Constant">protected initialized in BaseClass</span>&quot;;
+      <span class="Type">private</span> <span class="Statement">$</span><span class="Identifier">private</span> <span class="Statement">=</span> &quot;<span class="Constant">private initialized in BaseClass</span>&quot;;
+
+      <span class="Comment">// base class constructor</span>
+      <span class="PreProc">function</span> BaseClass<span class="Special">()</span>
+      <span class="Special">{</span>
+         <span class="Comment">// set properties from base class</span>
+         <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">&lt;p/&gt; Creating class %s via method %s()&lt;br&gt;</span>&quot;, <span class="Constant">__CLASS__</span>, <span class="Constant">__FUNCTION__</span> <span class="Special">)</span>;
+         <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>public <span class="Statement">=</span> &quot;<span class="Constant">public in BaseClass</span>&quot;;
+         <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>protected <span class="Statement">=</span> &quot;<span class="Constant">protected in BaseClass</span>&quot;;
+         <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>private <span class="Statement">=</span> &quot;<span class="Constant">private in BaseClass</span>&quot;;
+      <span class="Special">}</span>
+
+      <span class="Comment">// get properties from base class</span>
+      <span class="PreProc">function</span> displayProperties<span class="Special">()</span>
+      <span class="Special">{</span>
+         <span class="Statement">$</span><span class="Identifier">smlIndent</span> <span class="Statement">=</span> <span class="Identifier">str_repeat</span><span class="Special">(</span> &quot;<span class="Constant">&amp;nbsp;</span>&quot;, <span class="Constant">4</span> <span class="Special">)</span>;
+         <span class="Statement">$</span><span class="Identifier">lgIndent</span> <span class="Statement">=</span> <span class="Identifier">str_repeat</span><span class="Special">(</span> &quot;<span class="Constant">&amp;nbsp;</span>&quot;, <span class="Constant">8</span> <span class="Special">)</span>;
+
+         <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">&lt;br&gt;%s Inside method %s()&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">smlIndent</span>, <span class="Constant">__METHOD__</span> <span class="Special">)</span>;
+         <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">%s </span><span class="Special">\$</span><span class="Constant">this-&gt;public = '%s'&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">lgIndent</span>, <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>public <span class="Special">)</span>;
+         <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">%s </span><span class="Special">\$</span><span class="Constant">this-&gt;protected = '%s'&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">lgIndent</span>, <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>protected <span class="Special">)</span>;
+         <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">%s </span><span class="Special">\$</span><span class="Constant">this-&gt;private = '%s'&lt;br&gt;</span>&quot;, <span class="Statement">$</span><span class="Identifier">lgIndent</span>, <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>private <span class="Special">)</span>;
+      <span class="Special">}</span>
+   <span class="Special">}</span>
+
+   <span class="Comment">// inherit properies and methods from BaseClass</span>
+   <span class="Type">class</span> SubClass <span class="Type">extends</span> BaseClass
+   <span class="Special">{</span>
+      <span class="Comment">// sub-class constructor</span>
+      <span class="PreProc">function</span> SubClass<span class="Special">()</span>
+      <span class="Special">{</span>
+         <span class="Identifier">printf</span><span class="Special">(</span> &quot;<span class="Constant">&lt;p/&gt;Creating class %s via method %s()&lt;br&gt;</span>&quot;, <span class="Constant">__CLASS__</span>, <span class="Constant">__FUNCTION__</span> <span class="Special">)</span>;
+         <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>public <span class="Statement">=</span> &quot;<span class="Constant">public in SubClass</span>&quot;;
+         <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>protected <span class="Statement">=</span> &quot;<span class="Constant">protected in SubClass</span>&quot;;
+         <span class="Statement">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>private <span class="Statement">=</span> &quot;<span class="Constant">private in SubClass</span>&quot;;  <span class="Comment">// can't redeclare BaseClass value</span>
+      <span class="Special">}</span>
+   <span class="Special">}</span>
+
+   <span class="Statement">$</span><span class="Identifier">base</span> <span class="Statement">=</span> <span class="PreProc">new</span> BaseClass<span class="Special">()</span>;
+   <span class="Statement">$</span><span class="Identifier">base</span><span class="Type">-&gt;</span>displayProperties<span class="Special">()</span>;
+
+   <span class="Statement">$</span><span class="Identifier">base</span><span class="Type">-&gt;</span>public <span class="Statement">=</span> &quot;<span class="Constant">set </span><span class="Special">\$</span><span class="Constant">base-&gt;public outside class</span>&quot;;  <span class="Comment">// set public property</span>
+   <span class="Comment">// $base-&gt;protected = &quot;protected outside class&quot;; // can't access protected property</span>
+   <span class="Comment">// $base-&gt;private = &quot;private outside class&quot;; // can't access private property</span>
+
+   <span class="Statement">$</span><span class="Identifier">subClass</span> <span class="Statement">=</span> <span class="PreProc">new</span> SubClass<span class="Special">()</span>;
+   <span class="Statement">$</span><span class="Identifier">subClass</span><span class="Type">-&gt;</span>displayProperties<span class="Special">()</span>;
+
+   <span class="Statement">$</span><span class="Identifier">subClass</span><span class="Type">-&gt;</span>public <span class="Statement">=</span> &quot;<span class="Constant">set </span><span class="Special">\$</span><span class="Constant">subClass-&gt;public outside class</span>&quot;;
+   <span class="Comment">// $subClass-&gt;protected = &quot;protected outside class&quot;; //  can't access protected property</span>
+   <span class="Comment">// $subClass-&gt;private = &quot;private outside class&quot;; //  Undefined property</span>
+
+   <span class="Statement">$</span><span class="Identifier">subClass</span><span class="Type">-&gt;</span>displayProperties<span class="Special">()</span>;
+<span class="Special">?&gt;</span>
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>C:\xampp\htdocs\kirkwood\courses\php\examples\chapter11\_ENV.2.php.html</title>
+<meta name="Generator" content="Vim/7.2">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#e5e5e5" text="#000000"><font face="monospace">
+<span style="background-color: #f2f2f2"><font color="#6a5acd">&lt;?php</font></span><br>
+&nbsp;&nbsp; <font color="#0000ff">/* Note: If &quot;&lt;?= ?&gt;&quot; is not</font><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; working, you may need</font><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; change the following</font><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setting in your &quot;php.ini&quot;</font><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file and restart the web</font><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; server.&nbsp;&nbsp;For xampp on</font><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; windows, this file is found</font><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in &quot;C:\xampp\php\php.ini&quot;</font><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Check the phpinfo() call</font><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for the exact location of</font><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this file.</font><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;*</font><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;* Change this line:</font><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;short_open_tag = Off</font><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;*</font><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;* To this instead:</font><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;short_open_tag = On</font><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;*/</font><br>
+<br>
+&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">env</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">_ENV</font>;<br>
+&nbsp;&nbsp; <font color="#008080">ksort</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">env</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+<br>
+&nbsp;&nbsp; <font color="#804040"><b>foreach</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">env</font>&nbsp;<font color="#804040"><b>as</b></font>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">key</font>&nbsp;<font color="#804040"><b>=</b></font><font color="#804040"><b>&gt;</b></font>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">val</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#6a5acd">?&gt;</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#008080">&lt;</font><font color="#804040"><b>p</b></font><font color="#008080">&gt;</font>&nbsp;<font color="#008080">&lt;</font><font color="#804040"><b>b</b></font><font color="#008080">&gt;</font><b>$_ENV[</b><span style="background-color: #f2f2f2"><font color="#6a5acd">&lt;?</font></span><font color="#804040"><b>=</b></font>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">key</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">?&gt;</font></span><b>]:</b><font color="#008080">&lt;/</font><font color="#804040"><b>b</b></font><font color="#008080">&gt;</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">&lt;?</font></span><font color="#804040"><b>=</b></font>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">val</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">?&gt;</font></span>&nbsp;<font color="#008080">&lt;/</font><font color="#804040"><b>p</b></font><font color="#008080">&gt;</font><br>
+<span style="background-color: #f2f2f2"><font color="#6a5acd">&lt;?php</font></span><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#6a5acd">?&gt;</font></span><br>
+</font></body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>C:\xampp\htdocs\kirkwood\courses\php\projects\recipe02\create.10.php.html</title>
+<meta name="Generator" content="Vim/7.2">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#e5e5e5" text="#000000"><font face="monospace">
+<span style="background-color: #f2f2f2"><font color="#6a5acd">&lt;?php</font></span><br>
+&nbsp;&nbsp; <font color="#0000ff">/**</font><br>
+<span style="background-color: #ffa0ff">&nbsp;&nbsp;&nbsp;&nbsp;* @file create.</span><span style="background-color: #ff0000"><b>10</b></span><span style="background-color: #ffa0ff">.php</span><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;*/</font><br>
+<br>
+&nbsp;&nbsp; <font color="#0000ff">// initialize variables</font><br>
+&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">pageTitle</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">Create/Modify Recipe</font></span>&quot;;<br>
+<br>
+&nbsp;&nbsp; <font color="#0000ff">// 0, 1 &amp; 2. Initialize connect and use db</font><br>
+<span style="background-color: #e0e0e0"><font color="#000080">+-- 51 lines: require_once( &quot;include/login.php&quot; );</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>if</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>!</b></font>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">result</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>&nbsp;&nbsp;<font color="#0000ff">// SQL failed</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#804040"><b>die</b></font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">Could not execute SQL</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#ff00ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;pre&gt;</font></span><font color="#804040"><b>$</b></font><font color="#008080">sql</font><span style="background-color: #f2f2f2"><font color="#ff00ff">&lt;/pre&gt; &lt;br /&gt;</font></span>&quot;&nbsp;<font color="#804040"><b>.</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#008080">mysqli_error</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">conn</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+<span style="background-color: #a0a0ff"></span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ( $_REQUEST['submit'] == 'Create' )&nbsp;&nbsp;// create pressed</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 5. Obtain SQL INSERT results</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $_REQUEST['id'] = mysqli_insert_id( $conn );</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+<span style="background-color: #f2f2f2"><font color="#6a5acd">?&gt;</font></span><br>
+<br>
+<font color="#008080">&lt;</font><font color="#804040"><b>html</b></font><font color="#008080">&gt;</font><br>
+&nbsp;&nbsp; <font color="#008080">&lt;</font><font color="#804040"><b>head</b></font><font color="#008080">&gt;</font><br>
+<font color="#a020f0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008080">&lt;</font><font color="#804040"><b>title</b></font><font color="#008080">&gt;</font><br>
+<span style="background-color: #e0e0e0"><font color="#000080">+--117 lines: &lt;?= $pageTitle ?&gt;</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#008080">&lt;/</font><font color="#804040"><b>td</b></font><font color="#008080">&gt;</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#008080">&lt;/</font><font color="#804040"><b>tr</b></font><font color="#008080">&gt;</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#008080">&lt;/</font><font color="#804040"><b>table</b></font><font color="#008080">&gt;</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000ff">&lt;!</font><font color="#0000ff">-- verbose SQL reporting (debugging) --</font><font color="#0000ff">&gt;</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#008080">&lt;</font><font color="#804040"><b>input</b></font><font color="#008080">&nbsp;</font><font color="#2e8b57"><b>type</b></font><font color="#008080">=</font><span style="background-color: #f2f2f2"><font color="#ff00ff">&quot;hidden&quot;</font></span><font color="#008080">&nbsp;</font><font color="#2e8b57"><b>name</b></font><font color="#008080">=</font><span style="background-color: #f2f2f2"><font color="#ff00ff">&quot;debug&quot;</font></span><font color="#008080">&nbsp;/&gt;</font><br>
+<span style="background-color: #a0a0ff"></span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type=&quot;hidden&quot;</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name=&quot;id&quot;</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value=&quot;&lt;?= $_REQUEST['id'] ?&gt;&quot; /&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#008080">&lt;/</font><font color="#804040"><b>form</b></font><font color="#008080">&gt;</font><br>
+<span style="background-color: #f2f2f2"><font color="#6a5acd">&lt;?php</font></span><br>
+&nbsp;&nbsp; <font color="#0000ff">// 6. Close database connection</font><br>
+&nbsp;&nbsp; <font color="#008080">mysqli_close</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">conn</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;&nbsp;&nbsp;<font color="#0000ff">// &quot;login.php&quot; variable</font><br>
+<span style="background-color: #f2f2f2"><font color="#6a5acd">?&gt;</font></span><br>
+&nbsp;&nbsp; <font color="#008080">&lt;/</font><font color="#804040"><b>body</b></font><font color="#008080">&gt;</font><br>
+<font color="#008080">&lt;/</font><font color="#804040"><b>html</b></font><font color="#008080">&gt;</font><br>
+</font></body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>C:\xampp\htdocs\kirkwood\courses\php\projects\recipe01\search.09.php.html</title>
+<meta name="Generator" content="Vim/7.2">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#e5e5e5" text="#000000"><font face="monospace">
+<span style="background-color: #f2f2f2"><font color="#6a5acd">&lt;?php</font></span><br>
+&nbsp;&nbsp; <font color="#0000ff">/**</font><br>
+<span style="background-color: #ffa0ff">&nbsp;&nbsp;&nbsp;&nbsp;* @file search.0</span><span style="background-color: #ff0000"><b>9</b></span><span style="background-color: #ffa0ff">.php</span><br>
+<font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;*/</font><br>
+<br>
+&nbsp;&nbsp; <font color="#0000ff">// 0, 1 &amp; 2. Initialize connect and use db</font><br>
+&nbsp;&nbsp; <font color="#a020f0">require_once</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">include/login.php</font></span>&quot;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+<br>
+&nbsp;&nbsp; <font color="#0000ff">// for HTML table creation</font><br>
+<span style="background-color: #e0e0e0"><font color="#000080">+--&nbsp;&nbsp;1 lines: require_once( &quot;include/table.php&quot; );</font></span><br>
+<br>
+&nbsp;&nbsp; <font color="#0000ff">// for HTML select/option creation</font><br>
+&nbsp;&nbsp; <font color="#a020f0">require_once</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">include/form.php</font></span>&quot;&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+<br>
+&nbsp;&nbsp; <font color="#0000ff">// initialize variables</font><br>
+&nbsp;&nbsp; <font color="#804040"><b>$</b></font><font color="#008080">requestTitle</font>&nbsp;<font color="#804040"><b>=</b></font>&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">_REQUEST</font><span style="background-color: #f2f2f2"><font color="#6a5acd">[</font></span>'<span style="background-color: #f2f2f2"><font color="#ff00ff">title</font></span>'<span style="background-color: #f2f2f2"><font color="#6a5acd">]</font></span>;<br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp; $searchClause = &quot;&quot;;</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp; $categoryClause = &quot;&quot;;</span><br>
+<br>
+&nbsp;&nbsp; <font color="#0000ff">// 3. Build the SQL statement</font><br>
+<span style="background-color: #ffa0ff">&nbsp;&nbsp; if ( </span><span style="background-color: #ff0000"><b>strlen( $_REQUEST['title'] ) &gt; 0 )&nbsp;&nbsp;// text value exists</b></span><br>
+<span style="background-color: #a0ffff"><font color="#0000ff"><b>---</b></font></span><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+<span style="background-color: #ffa0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$s</span><span style="background-color: #ff0000"><b>earchClause = &quot;AND ( rec.name LIKE '%$requestTitle%' )&quot;;</b></span><br>
+<span style="background-color: #a0ffff"><font color="#0000ff"><b>---</b></font></span><br>
+<span style="background-color: #a0ffff"><font color="#0000ff"><b>--- 10 inserted lines </b></font></span><br>
+<span style="background-color: #a0ffff"><font color="#0000ff"><b>---</b></font></span><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+<span style="background-color: #ffa0ff"></span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp; if ( $_REQUEST['category'] &gt; 0 )&nbsp;&nbsp;// category selected</span><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+<span style="background-color: #ffa0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$</span><span style="background-color: #ff0000"><b>categoryClause =</b></span><br>
+<span style="background-color: #ffa0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="background-color: #ff0000"><b>&nbsp;&nbsp; sprintf( &quot;AND ( cat.id = %d )&quot;</b></span><span style="background-color: #ffa0ff">,</span><br>
+<span style="background-color: #ffa0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="background-color: #ff0000"><b>$_REQUEST['category'] );</b></span><br>
+<span style="background-color: #a0ffff"><font color="#0000ff"><b>---</b></font></span><br>
+<span style="background-color: #a0ffff"><font color="#0000ff"><b>--- 6 inserted lines </b></font></span><br>
+<span style="background-color: #a0ffff"><font color="#0000ff"><b>---</b></font></span><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+<span style="background-color: #a0a0ff"></span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp; $sql = sprintf( &quot;</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp; SELECT rec.id AS rid,</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rec.name AS title,</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rec.content AS mix,</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cat.name AS type</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FROM recipe AS rec,</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; category AS cat</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WHERE</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ( rec.category_id = cat.id )</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %s&nbsp;&nbsp;# search title</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %s&nbsp;&nbsp;# search category</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ORDER BY title&quot;,</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $searchClause,</span><br>
+<span style="background-color: #a0a0ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $categoryClause );</span><br>
+<br>
+&nbsp;&nbsp; <font color="#804040"><b>if</b></font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;<font color="#008080">array_key_exists</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;'<span style="background-color: #f2f2f2"><font color="#ff00ff">debug</font></span>',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#804040"><b>$</b></font><font color="#008080">_REQUEST</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span><br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">{</font></span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#008080">printf</font><span style="background-color: #f2f2f2"><font color="#6a5acd">(</font></span>&nbsp;&quot;<span style="background-color: #f2f2f2"><font color="#ff00ff">SQL: &lt;pre&gt;%s&lt;/pre&gt;</font></span>&quot;, <font color="#804040"><b>$</b></font><font color="#008080">sql</font>&nbsp;<span style="background-color: #f2f2f2"><font color="#6a5acd">)</font></span>;<br>
+&nbsp;&nbsp; <span style="background-color: #f2f2f2"><font color="#6a5acd">}</font></span><br>
+<span style="background-color: #e0e0e0"><font color="#000080">+--185 lines: 4. Execute the SQL statement</font></span><br>
+</font></body>
+</html>
