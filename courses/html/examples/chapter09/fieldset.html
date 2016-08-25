@@ -1,0 +1,47 @@
+<style>
+   fieldset {
+       border: 1px solid #CCC;
+       border-radius: 5px;
+       padding: 10px;
+   }
+
+   legend {
+       border: medium none;
+       margin-left: 45%;
+       padding: 0 10px;
+       position: relative;
+       text-align: center;
+       width: auto;
+   }
+</style>
+
+<form action="javascript:alert('Form submitted!');"
+      method="post" >
+   <fieldset>
+      <legend> Survey </legend>
+
+      Would you rather ... <br>
+
+      <input type="radio" 
+             name="question"
+             value="run"
+             id="run"> 
+         <label for="run">
+            Be able to run at 100 
+            miles per hour?</label>
+
+      <br>
+      
+      <input type="radio" 
+             name="question"
+             value="fly"
+             id="fly"> 
+         <label for="fly">
+            Or fly at 10 miles 
+            per hour?</label>
+   </fieldset>
+
+   <p>
+   
+   <input type="submit">
+</form>

@@ -1,0 +1,26 @@
+@CHARSET "ISO-8859-1";
+
+div.blueStyle {
+   background-color: blue;
+   color: white;
+}
+
+div.grayStyle {
+   background-color: gray;
+   color: white;
+}
+
+div.greenStyle {
+   background-color: green;
+   color: white;
+}
+
+div.redStyle {
+   background-color: red;
+   color: white;
+}
+
+div.blackStyle {
+   background-color: black;
+   color: white;
+}

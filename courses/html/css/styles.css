@@ -1,0 +1,48 @@
+/* move the content down to allow room for the navigation bar */
+div#wrapper
+{
+   margin-top: 25px;
+   background-color: #f8f8f8;
+}
+
+div.panel > div.panel-heading
+{
+   color: #ffffff;
+   background-color: #155183;
+}
+
+/* center h2 headers */
+div.panel-heading > h2
+{
+   text-align: center;
+   font-size: 1.5em;
+   font-weight: bold;
+}
+
+/* move the content down for spacing */
+.panel-default
+{
+   margin-top: 15px;
+}
+
+/* change color to remember which menu was selected */
+.nav > li.active > a:active,
+.nav > li.active > a:focus
+{
+   background-color: #428BCA;
+   color: #FFFFFF;
+}
+
+/* make the arrow icon bold and bigger */
+span.fa, span.arrow
+{
+   font-weight: bold;
+   font-size: 1.5em;
+}
+
+/* control footer */
+div.footer
+{
+   text-align: center;
+   font-size: 7pt;
+}

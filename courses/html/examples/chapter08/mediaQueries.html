@@ -1,0 +1,26 @@
+<style>
+   div.maxMin {
+      color: black;
+      background-color: yellow;
+   }
+
+   @media screen and (max-width: 500px) {
+       div.maxMin {
+           color: yellow;
+           background-color: black;
+       }
+   }
+
+   @media screen and (min-width: 700px) {
+       div.maxMin {
+           color: black;
+           background-color: cyan;
+       }
+   }
+</style>
+
+<div class="maxMin">
+   When the screen is smaller than 500px it is one color.
+   When the screen is smaller than 700px it is another.
+   Resize the browser to try it!
+</div>
